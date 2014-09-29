@@ -1,0 +1,86 @@
+BEGIN;
+CREATE TABLE "sos_app_users" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "email_addr" varchar(450) NOT NULL,
+    "fname" varchar(250) NOT NULL,
+    "lname" varchar(250) NOT NULL,
+    "passwd" varchar(50) NOT NULL,
+    "phone" varchar(45) NOT NULL,
+    "is_active" bool NOT NULL,
+    "date_registered" datetime NOT NULL,
+    "dob" date NOT NULL,
+    "security_answer" varchar(450) NOT NULL
+)
+;
+CREATE TABLE "sos_app_contacts" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id_id" integer NOT NULL REFERENCES "sos_app_users" ("id"),
+    "email_addr" varchar(450) NOT NULL,
+    "fname" varchar(250) NOT NULL,
+    "lname" varchar(250) NOT NULL,
+    "phone" varchar(45) NOT NULL,
+    "enable_alerts" bool NOT NULL,
+    "share_location" bool NOT NULL,
+    "send_sms" bool NOT NULL,
+    "send_email" bool NOT NULL,
+    "send_push" bool NOT NULL,
+    "date_added" date NOT NULL
+)
+;
+CREATE TABLE "sos_app_mobile_device" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id_id" integer NOT NULL REFERENCES "sos_app_users" ("id"),
+    "device_uuid" varchar(450) NOT NULL,
+    "phone_number" varchar(45) NOT NULL,
+    "date_added" date NOT NULL
+)
+;
+CREATE TABLE "sos_app_incidents_reported" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "reported_by_id" integer NOT NULL REFERENCES "sos_app_users" ("id"),
+    "longitude" real NOT NULL,
+    "latitude" real NOT NULL,
+    "address" varchar(450) NOT NULL,
+    "city" varchar(100) NOT NULL,
+    "state" varchar(45) NOT NULL,
+    "zip" varchar(45) NOT NULL,
+    "country" varchar(150) NOT NULL,
+    "summary" varchar(450) NOT NULL,
+    "description" text NOT NULL,
+    "time_of_incident" datetime NOT NULL,
+    "date_recorded" date NOT NULL
+)
+;
+CREATE TABLE "sos_app_user_location_track" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "session_id" varchar(450) NOT NULL,
+    "user_id_id" integer NOT NULL REFERENCES "sos_app_users" ("id"),
+    "longitude" real NOT NULL,
+    "latitude" real NOT NULL,
+    "time_of_incident" datetime NOT NULL
+)
+;
+CREATE TABLE "sos_app_emergency_services" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "service_name" varchar(450) NOT NULL,
+    "description" varchar(450) NOT NULL,
+    "email_addr" varchar(450) NOT NULL,
+    "phone" varchar(45) NOT NULL,
+    "url" varchar(450) NOT NULL,
+    "date_added" date NOT NULL
+)
+;
+CREATE TABLE "sos_app_user_emergency_service_selection" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id_id" integer NOT NULL REFERENCES "sos_app_users" ("id"),
+    "emergency_service_id" integer NOT NULL REFERENCES "sos_app_emergency_services" ("id")
+)
+;
+CREATE INDEX "sos_app_contacts_1ffdedc6" ON "sos_app_contacts" ("user_id_id");
+CREATE INDEX "sos_app_mobile_device_1ffdedc6" ON "sos_app_mobile_device" ("user_id_id");
+CREATE INDEX "sos_app_incidents_reported_552efcda" ON "sos_app_incidents_reported" ("reported_by_id");
+CREATE INDEX "sos_app_user_location_track_1ffdedc6" ON "sos_app_user_location_track" ("user_id_id");
+CREATE INDEX "sos_app_user_emergency_service_selection_1ffdedc6" ON "sos_app_user_emergency_service_selection" ("user_id_id");
+CREATE INDEX "sos_app_user_emergency_service_selection_c6edb62c" ON "sos_app_user_emergency_service_selection" ("emergency_service_id");
+
+COMMIT;
