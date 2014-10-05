@@ -1,27 +1,17 @@
 from django.conf.urls import patterns, include, url
-
-#for rest framework
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
-
 from django.contrib import admin
+from rest_framework import routers
+from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+    MobileDeviceViewSet, UserLocationTrackViewSet
+
 admin.autodiscover()
-
-
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_active')
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'contacts', ContactsViewSet)
+router.register(r'mobile-info', MobileDeviceViewSet)
+router.register(r'incident', IncidentsReportedViewSet)
+router.register(r'location-track', UserLocationTrackViewSet)
 
 
 urlpatterns = [

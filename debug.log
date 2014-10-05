@@ -1,0 +1,132 @@
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 3, in <module>
+    from sos_app.serializers import UserSerializer, ContactsSerializer
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 10, in <module>
+    class ContactsSerializer(serializers.ModelSerializer):
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 11, in ContactsSerializer
+    class Meta:
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 13, in Meta
+    print mode._meta.fields
+NameError: name 'mode' is not defined
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 96, in list
+    serializer = self.get_serializer(self.object_list, many=True)
+  File "/Library/Python/2.7/site-packages/rest_framework/generics.py", line 109, in get_serializer
+    context=context)
+  File "/Library/Python/2.7/site-packages/rest_framework/serializers.py", line 200, in __init__
+    self.fields = self.get_fields()
+  File "/Library/Python/2.7/site-packages/rest_framework/serializers.py", line 243, in get_fields
+    assert isinstance(self.opts.fields, (list, tuple)), '`fields` must be a list or tuple'
+AssertionError: `fields` must be a list or tuple
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 3, in <module>
+    from sos_app.serializers import UserSerializer, ContactsSerializer
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 10, in <module>
+    class ContactsSerializer(serializers.ModelSerializer):
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 11, in ContactsSerializer
+    class Meta:
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 14, in Meta
+    fields = get_model_fields(model)
+  File "/Users/prateek/sjsu/sos/sos_app/utils.py", line 5, in get_model_fields
+    fields[field.name] = field
+TypeError: 'tuple' object does not support item assignment
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 3, in <module>
+    from sos_app.serializers import UserSerializer, ContactsSerializer
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 10, in <module>
+    class ContactsSerializer(serializers.ModelSerializer):
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 11, in ContactsSerializer
+    class Meta:
+  File "/Users/prateek/sjsu/sos/sos_app/serializers.py", line 14, in Meta
+    fields = get_model_fields(model)
+  File "/Users/prateek/sjsu/sos/sos_app/utils.py", line 6, in get_model_fields
+    fields[counter] = field
+IndexError: list assignment index out of range
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 14, in <module>
+    class ContactsViewSet(viewsets.ModelViewSet):
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 17, in ContactsViewSet
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwner,)
+NameError: name 'permissions' is not defined
+Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 14, in <module>
+    class ContactsViewSet(viewsets.ModelViewSet):
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 17, in ContactsViewSet
+    logging.info("about to test")
+NameError: name 'logging' is not defined

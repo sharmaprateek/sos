@@ -1,0 +1,545 @@
+[05/Oct/2014 07:55:01] INFO [sos_app.views:18] about to test
+[05/Oct/2014 07:55:43] INFO [sos_app.views:18] about to test
+[05/Oct/2014 07:56:23] INFO [sos_app.views:18] <class 'sos_app.permissions.IsOwner'>
+[05/Oct/2014 07:56:36] INFO [sos_app.views:18] about to test
+[05/Oct/2014 07:58:16] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:16] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 07:58:21] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:21] INFO [sos_app.permissions:15] AnonymousUser
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 07:58:29] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:00:06] INFO [sos_app.views:18] about to test
+[05/Oct/2014 08:00:06] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 405, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 336, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'NoneType'>`
+[05/Oct/2014 08:04:46] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:04:46] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 405, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 336, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'NoneType'>`
+[05/Oct/2014 08:04:56] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:05:02] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:05:02] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:05:06] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:05:06] INFO [sos_app.permissions:15] AnonymousUser
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:05:12] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:07:40] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:14] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:08:14] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:14] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:08:15] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:12:51] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:12:51] ERROR [django.request:224] Internal Server Error: /contacts/1/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 391, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 321, in initial
+    self.check_permissions(request)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 277, in check_permissions
+    for permission in self.get_permissions():
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 230, in get_permissions
+    return [permission() for permission in self.permission_classes]
+TypeError: 'module' object is not callable
+[05/Oct/2014 08:13:04] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:13:04] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:13:04] INFO [sos_app.permissions:15] AnonymousUser
+[05/Oct/2014 08:13:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:13:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:13:51] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 54, in create
+    self.object = serializer.save(force_insert=True)
+  File "/Library/Python/2.7/site-packages/rest_framework/serializers.py", line 595, in save
+    self.save_object(self.object, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/serializers.py", line 1037, in save_object
+    obj.save(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 545, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 573, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 654, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 687, in _do_insert
+    using=using, raw=raw)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 903, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 69, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 53, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/utils.py", line 99, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 53, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/Library/Python/2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`sos`.`sos_app_contacts`, CONSTRAINT `user_id_id_refs_id_e19b8f99` FOREIGN KEY (`user_id_id`) REFERENCES `sos_app_users` (`id`))')
+[05/Oct/2014 08:20:24] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:21:01] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:21:01] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:21:01] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:21:32] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:21:32] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:21:32] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:21:32] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:21:42] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:21:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:21:42] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:21:59] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:21:59] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:21:59] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:26:08] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:26:09] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:26:09] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:26:09] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:26:27] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:26:27] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:26:27] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 137, in get_response
+    response = response.render()
+  File "/Library/Python/2.7/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/Library/Python/2.7/site-packages/rest_framework/response.py", line 63, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 606, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 556, in get_context
+    raw_data_post_form = self.get_raw_data_form(view, 'POST', request)
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 484, in get_raw_data_form
+    if not self.show_form_for_method(view, method, request, obj):
+  File "/Library/Python/2.7/site-packages/rest_framework/renderers.py", line 424, in show_form_for_method
+    view.check_object_permissions(request, obj)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 287, in check_object_permissions
+    if not permission.has_object_permission(request, self, obj):
+  File "/Users/prateek/sjsu/sos/sos_app/permissions.py", line 16, in has_object_permission
+    if obj.user_id == request.user:
+AttributeError: 'Contacts' object has no attribute 'user_id'
+[05/Oct/2014 08:26:48] INFO [sos_app.views:19] about to test
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:26:48] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:10] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:13] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:18] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:25] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:25] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:31] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:33] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:33] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:35] WARNING [django.request:143] Not Found: /contacts/5.
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:40] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:41] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:41] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:44] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:47] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:47] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:49] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:51] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:51] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:53] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:27:55] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:27:55] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:28:17] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:28:33] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 08:28:33] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:47:17] ERROR [django.request:224] Internal Server Error: /incident
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 5, in <module>
+    from sos_app.models import Contacts, Mobile_Device, Incidents_Reported,\
+ImportError: cannot import name IncidentsReportedSerializer
+[05/Oct/2014 08:47:46] ERROR [django.request:224] Internal Server Error: /incident
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 5, in <module>
+    from sos_app.models import Contacts, Mobile_Device, Incidents_Reported,\
+ImportError: cannot import name IncidentsReportedSerializer
+[05/Oct/2014 08:48:43] INFO [sos_app.views:21] about to test
+[05/Oct/2014 08:48:43] INFO [sos_app.views:27] about to test
+[05/Oct/2014 08:48:43] INFO [sos_app.views:33] about to test
+[05/Oct/2014 08:48:43] INFO [sos_app.views:39] about to test
+[05/Oct/2014 08:49:01] INFO [sos_app.views:21] about to test
+[05/Oct/2014 08:49:01] INFO [sos_app.views:27] about to test
+[05/Oct/2014 08:49:01] INFO [sos_app.views:33] about to test
+[05/Oct/2014 08:49:01] INFO [sos_app.views:39] about to test
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:46] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:54] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 08:52:57] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:52:57] INFO [sos_app.permissions:15] AnonymousUser
+[05/Oct/2014 08:53:02] INFO [sos_app.permissions:14] Mobile_Device object
+[05/Oct/2014 08:53:02] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:32] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 08:54:42] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 08:59:51] INFO [sos_app.views:23] about to test
+[05/Oct/2014 08:59:51] INFO [sos_app.views:31] about to test
+[05/Oct/2014 08:59:51] INFO [sos_app.views:39] about to test
+[05/Oct/2014 08:59:51] INFO [sos_app.views:47] about to test
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:14] User_Location_Track object
+[05/Oct/2014 09:00:07] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:12] INFO [sos_app.views:23] about to test
+[05/Oct/2014 09:05:12] INFO [sos_app.views:31] about to test
+[05/Oct/2014 09:05:12] INFO [sos_app.views:39] about to test
+[05/Oct/2014 09:05:12] INFO [sos_app.views:47] about to test
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:39] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:50] INFO [sos_app.permissions:15] prateek
+[05/Oct/2014 09:05:59] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:05:59] INFO [sos_app.permissions:15] AnonymousUser
+[05/Oct/2014 09:06:03] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:06:03] INFO [sos_app.permissions:15] admin
