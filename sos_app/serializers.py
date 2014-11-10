@@ -6,7 +6,7 @@ from sos_app.utils import get_model_fields
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'is_active')
+        fields = ('url', 'username', 'password', 'email', 'is_active')
 
 class ContactsSerializer(serializers.ModelSerializer):
     class Meta:
