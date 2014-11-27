@@ -26,6 +26,9 @@
     <feature name="PickContact">
         <param name="android-package" value="com.kolwit.cordova.PickContactPlugin" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <name>SOSApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -35,7 +38,4 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
-    </feature>
 </widget>

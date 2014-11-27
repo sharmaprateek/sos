@@ -268,6 +268,7 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.contacts \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.file \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media-capture \
@@ -293,6 +294,10 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/Acceleration.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/accelerometer.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/notification.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android/notification.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.file/www \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.file/www/android \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.file/www/DirectoryEntry.js \

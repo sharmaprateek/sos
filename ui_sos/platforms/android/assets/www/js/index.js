@@ -34,12 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        navigator.contacts.pickContact(function(contact){
-                                       console.log('The following contact has been selected:' + JSON.stringify(contact));
-                                       },function(err){
-                                       console.log('Error: ' + err);
-                                       });
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -51,7 +45,22 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+
 };
 
 app.initialize();
+
+var sos = sos || {};
+
+sos.util = {
+    showContactPicker: function() {
+        navigator.notification.alert('Launching contact picker');
+        navigator.contacts.pickContact(function(contact){
+               console.log('The following contact has been selected:' + JSON.stringify(contact));
+               navigator.notification.alert('The following contact has been selected:' + JSON.stringify(contact));
+        }, function(err){
+               console.log('Error: ' + err);
+        });
+    }
+}

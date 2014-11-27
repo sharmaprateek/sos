@@ -51,10 +51,11 @@ var app = {
 
 app.initialize();
 
-sos = sos || {};
+var sos = sos || {};
 
 sos.util = {
     showContactPicker: function() {
+        navigator.notification.alert('Launching contact picker');
         navigator.contacts.pickContact(function(contact){
                console.log('The following contact has been selected:' + JSON.stringify(contact));
                navigator.notification.alert('The following contact has been selected:' + JSON.stringify(contact));
