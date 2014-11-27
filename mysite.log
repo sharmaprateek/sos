@@ -543,3 +543,1000 @@ ImportError: cannot import name IncidentsReportedSerializer
 [05/Oct/2014 09:05:59] INFO [sos_app.permissions:15] AnonymousUser
 [05/Oct/2014 09:06:03] INFO [sos_app.permissions:14] Contacts object
 [05/Oct/2014 09:06:03] INFO [sos_app.permissions:15] admin
+[05/Oct/2014 09:13:04] INFO [sos_app.permissions:14] Contacts object
+[05/Oct/2014 09:13:04] INFO [sos_app.permissions:15] admin
+[06/Oct/2014 00:00:23] INFO [sos_app.permissions:14] Contacts object
+[06/Oct/2014 00:00:23] INFO [sos_app.permissions:15] admin
+[06/Oct/2014 00:01:20] INFO [sos_app.views:23] about to test
+[06/Oct/2014 00:01:20] INFO [sos_app.views:31] about to test
+[06/Oct/2014 00:01:20] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:01:20] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:01:20] INFO [sos_app.permissions:14] Contacts object
+[06/Oct/2014 00:01:20] INFO [sos_app.permissions:15] admin
+[06/Oct/2014 00:01:56] INFO [sos_app.views:23] about to test
+[06/Oct/2014 00:01:56] INFO [sos_app.views:31] about to test
+[06/Oct/2014 00:01:56] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:01:56] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:05:27] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 20, in <module>
+    class ContactsViewSet(viewsets.ModelViewSet):
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 21, in ContactsViewSet
+    queryset = Contacts.objects.filter(owner==request.user)
+NameError: name 'owner' is not defined
+[06/Oct/2014 00:09:07] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 19, in <module>
+    class ContactsViewSet(viewsets.ModelViewSet):
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 20, in ContactsViewSet
+    queryset = Contacts.objects.filter(owner=self.request.user)
+NameError: name 'self' is not defined
+[06/Oct/2014 00:12:49] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:12:49] INFO [sos_app.views:33] about to test
+[06/Oct/2014 00:12:49] INFO [sos_app.views:41] about to test
+[06/Oct/2014 00:12:49] INFO [sos_app.views:49] about to test
+[06/Oct/2014 00:18:37] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:18:37] INFO [sos_app.views:33] about to test
+[06/Oct/2014 00:18:37] INFO [sos_app.views:41] about to test
+[06/Oct/2014 00:18:37] INFO [sos_app.views:49] about to test
+[06/Oct/2014 00:18:41] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:18:42] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:18:43] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:18:44] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:18:44] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:19:25] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 4, in <module>
+    from sos_app.views import UserViewSet, ContactsViewSet, IncidentsReportedViewSet,\
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 30
+    else
+       ^
+SyntaxError: invalid syntax
+[06/Oct/2014 00:19:31] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:19:31] INFO [sos_app.views:36] about to test
+[06/Oct/2014 00:19:31] INFO [sos_app.views:44] about to test
+[06/Oct/2014 00:19:31] INFO [sos_app.views:52] about to test
+[06/Oct/2014 00:19:31] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:19:54] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:19:54] INFO [sos_app.views:36] about to test
+[06/Oct/2014 00:19:54] INFO [sos_app.views:44] about to test
+[06/Oct/2014 00:19:54] INFO [sos_app.views:52] about to test
+[06/Oct/2014 00:19:54] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:20:49] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:20:49] INFO [sos_app.views:36] about to test
+[06/Oct/2014 00:20:49] INFO [sos_app.views:44] about to test
+[06/Oct/2014 00:20:49] INFO [sos_app.views:52] about to test
+[06/Oct/2014 00:20:49] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:21:24] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:21:48] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:21:48] INFO [sos_app.views:36] about to test
+[06/Oct/2014 00:21:48] INFO [sos_app.views:44] about to test
+[06/Oct/2014 00:21:48] INFO [sos_app.views:52] about to test
+[06/Oct/2014 00:21:48] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:22:47] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:22:47] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:22:47] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:22:47] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:22:47] INFO [sos_app.views:28] Alright, getting queryset
+[06/Oct/2014 00:22:47] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:22:47] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 31, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:23:19] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:23:19] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:23:19] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:23:19] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:23:19] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    logger.info("Alright, getting queryset for - "+self.request.user)
+TypeError: cannot concatenate 'str' and 'AnonymousUser' objects
+[06/Oct/2014 00:23:36] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:23:36] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:23:36] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:23:36] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:23:36] INFO [sos_app.views:28] AnonymousUser
+[06/Oct/2014 00:23:36] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:23:36] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 31, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:24:28] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:24:28] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:24:28] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:24:28] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:24:28] INFO [sos_app.views:28] AnonymousUser
+[06/Oct/2014 00:24:28] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:24:28] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 31, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:24:52] INFO [sos_app.views:28] AnonymousUser
+[06/Oct/2014 00:24:52] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:24:52] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 31, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:26:35] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:26:35] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:26:35] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:26:35] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:26:35] INFO [sos_app.views:28] AnonymousUser
+[06/Oct/2014 00:26:35] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:26:48] INFO [sos_app.views:28] admin
+[06/Oct/2014 00:26:48] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:27:16] INFO [sos_app.views:28] AnonymousUser
+[06/Oct/2014 00:27:16] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:27:22] INFO [sos_app.views:28] prateek
+[06/Oct/2014 00:27:22] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:27:50] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:27:50] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:27:50] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:27:50] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:27:50] INFO [sos_app.views:28] <rest_framework.request.Request object at 0x106046d10>
+[06/Oct/2014 00:27:50] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:28:17] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:28:17] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:28:17] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:28:17] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:28:17] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 28, in get_queryset
+    logger.info(self.request.user())
+TypeError: 'SimpleLazyObject' object is not callable
+[06/Oct/2014 00:28:32] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:28:32] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:28:32] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:28:32] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:28:32] INFO [sos_app.views:28] prateek
+[06/Oct/2014 00:28:32] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:28:54] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:28:54] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:28:54] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:28:54] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:28:54] INFO [sos_app.views:28] False
+[06/Oct/2014 00:28:54] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:29:22] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:29:22] INFO [sos_app.views:40] about to test
+[06/Oct/2014 00:29:22] INFO [sos_app.views:48] about to test
+[06/Oct/2014 00:29:22] INFO [sos_app.views:56] about to test
+[06/Oct/2014 00:29:22] INFO [sos_app.views:29] False
+[06/Oct/2014 00:29:22] INFO [sos_app.views:34] Returning all contacts queryset
+[06/Oct/2014 00:29:36] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:29:36] INFO [sos_app.views:40] about to test
+[06/Oct/2014 00:29:36] INFO [sos_app.views:48] about to test
+[06/Oct/2014 00:29:36] INFO [sos_app.views:56] about to test
+[06/Oct/2014 00:29:36] INFO [sos_app.views:29] prateek
+[06/Oct/2014 00:29:36] INFO [sos_app.views:34] Returning all contacts queryset
+[06/Oct/2014 00:31:34] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:31:34] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:31:34] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:31:34] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:31:34] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:31:45] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:31:47] INFO [sos_app.views:33] Returning all contacts queryset
+[06/Oct/2014 00:31:52] INFO [sos_app.views:30] Returning filtered queryset
+[06/Oct/2014 00:35:05] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:35:05] INFO [sos_app.views:38] about to test
+[06/Oct/2014 00:35:05] INFO [sos_app.views:46] about to test
+[06/Oct/2014 00:35:05] INFO [sos_app.views:54] about to test
+[06/Oct/2014 00:35:05] INFO [sos_app.views:32] Returning filtered queryset
+[06/Oct/2014 00:35:20] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:35:20] INFO [sos_app.views:32] about to test
+[06/Oct/2014 00:35:20] INFO [sos_app.views:40] about to test
+[06/Oct/2014 00:35:20] INFO [sos_app.views:48] about to test
+[06/Oct/2014 00:35:49] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:35:49] INFO [sos_app.views:32] about to test
+[06/Oct/2014 00:35:49] INFO [sos_app.views:40] about to test
+[06/Oct/2014 00:35:49] INFO [sos_app.views:48] about to test
+[06/Oct/2014 00:37:01] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:37:01] INFO [sos_app.views:39] about to test
+[06/Oct/2014 00:37:01] INFO [sos_app.views:47] about to test
+[06/Oct/2014 00:37:01] INFO [sos_app.views:55] about to test
+[06/Oct/2014 00:37:01] INFO [sos_app.views:32] Returning filtered queryset
+[06/Oct/2014 00:37:17] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:37:17] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:37:17] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:37:17] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:37:24] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:37:32] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:37:49] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:37:49] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:37:49] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:37:49] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:37:49] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:37:52] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:37:52] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:38:02] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:38:02] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:38:02] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:38:02] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:38:27] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:38:27] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:38:27] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:38:27] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:38:27] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:38:27] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:38:33] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:38:33] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:38:33] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:38:33] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:38:57] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:38:57] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:38:57] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:38:57] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:38:57] INFO [sos_app.views:28] Returning filtered queryset
+[06/Oct/2014 00:38:57] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/viewsets.py", line 79, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/mixins.py", line 76, in list
+    self.object_list = self.filter_queryset(self.get_queryset())
+  File "/Users/prateek/sjsu/sos/sos_app/views.py", line 29, in get_queryset
+    return Contacts.objects.filter(owner=self.request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 163, in filter
+    return self.get_queryset().filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1204, in add_q
+    clause = self._add_q(where_part, used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1240, in _add_q
+    current_negated=current_negated)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1128, in build_filter
+    lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related.py", line 1107, in get_lookup_constraint
+    value[index]), AND)
+  File "/Library/Python/2.7/site-packages/django/utils/tree.py", line 104, in add
+    data = self._prepare_data(data)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 79, in _prepare_data
+    value = obj.prepare(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/where.py", line 352, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 369, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/__init__.py", line 613, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'AnonymousUser'
+[06/Oct/2014 00:39:03] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:39:03] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:39:03] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:39:03] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:41:21] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:41:21] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:41:21] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:41:21] INFO [sos_app.views:51] about to test
+[06/Oct/2014 00:41:21] ERROR [django.request:224] Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/Users/prateek/sjsu/sos/sos/urls.py", line 11, in <module>
+    router.register(r'contacts', ContactsViewSet)
+  File "/Library/Python/2.7/site-packages/rest_framework/routers.py", line 59, in register
+    base_name = self.get_default_base_name(viewset)
+  File "/Library/Python/2.7/site-packages/rest_framework/routers.py", line 140, in get_default_base_name
+    assert model_cls, '`base_name` argument not specified, and could ' \
+AssertionError: `base_name` argument not specified, and could not automatically determine the name from the viewset, as it does not have a `.queryset` attribute.
+[06/Oct/2014 00:41:33] INFO [sos_app.views:22] about to test
+[06/Oct/2014 00:41:33] INFO [sos_app.views:35] about to test
+[06/Oct/2014 00:41:33] INFO [sos_app.views:43] about to test
+[06/Oct/2014 00:41:33] INFO [sos_app.views:51] about to test
+[06/Oct/2014 20:47:49] WARNING [django.request:143] Not Found: /favicon.ico
+[06/Oct/2014 20:47:49] WARNING [django.request:143] Not Found: /favicon.ico
+[09/Oct/2014 01:53:07] WARNING [django.request:143] Not Found: /favicon.ico
+[09/Oct/2014 01:53:07] WARNING [django.request:143] Not Found: /favicon.ico
+[09/Oct/2014 02:00:54] INFO [sos_app.views:28] Returning filtered queryset for Contacts
+[09/Oct/2014 02:01:41] INFO [sos_app.views:28] Returning filtered queryset for Contacts
+[09/Oct/2014 02:01:43] INFO [sos_app.views:28] Returning filtered queryset for Contacts
+[11/Oct/2014 18:36:03] WARNING [django.request:143] Not Found: /favicon.ico
+[11/Oct/2014 18:36:03] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Nov/2014 19:43:24] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Nov/2014 19:43:24] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Nov/2014 19:43:55] WARNING [django.request:143] Not Found: /favicon.ico
+[17/Nov/2014 19:44:18] INFO [sos_app.views:28] Returning filtered queryset for Contacts
+[17/Nov/2014 19:44:25] INFO [sos_app.views:28] Returning filtered queryset for Contacts
+[17/Nov/2014 21:08:38] INFO [sos_app.views:40] Returning filtered queryset for mobile device object

@@ -45,7 +45,21 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+
 };
 
 app.initialize();
+
+sos = sos || {};
+
+sos.util = {
+    showContactPicker: function() {
+        navigator.contacts.pickContact(function(contact){
+               console.log('The following contact has been selected:' + JSON.stringify(contact));
+               navigator.notification.alert('The following contact has been selected:' + JSON.stringify(contact));
+        }, function(err){
+               console.log('Error: ' + err);
+        });
+    }
+}

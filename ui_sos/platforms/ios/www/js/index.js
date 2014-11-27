@@ -45,7 +45,27 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+
 };
 
 app.initialize();
+
+sosAppMethods = {
+    showContact: function() {
+//        navigator.notification.alert("Contact picker will now show", null, "Test", "OK Button");
+//        window.plugins.PickContact.chooseContact(function (contactInfo) {
+//                                                 setTimeout(function () { // use time-out to fix iOS alert problem
+//                                                            alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
+//                                                            }, 0);
+//                                                 });
+
+        navigator.contacts.pickContact(function(contact){
+                                       console.log('The following contact has been selected:' + JSON.stringify(contact));
+                                       navigator.notification.alert('The following contact has been selected:' + JSON.stringify(contact));
+                                       },function(err){
+                                       console.log('Error: ' + err);
+                                       });
+        
+    }
+}

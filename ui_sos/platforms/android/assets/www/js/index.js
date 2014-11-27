@@ -34,6 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        navigator.contacts.pickContact(function(contact){
+                                       console.log('The following contact has been selected:' + JSON.stringify(contact));
+                                       },function(err){
+                                       console.log('Error: ' + err);
+                                       });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

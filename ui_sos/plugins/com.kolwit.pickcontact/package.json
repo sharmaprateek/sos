@@ -1,0 +1,28 @@
+{
+    "version": "1.0.4",
+    "name": "com.kolwit.pickcontact",
+    "cordova_name": "Pick Contact Details",
+    "description": "\n\t\tNative contact-picker overlay, accessing the address book\n\t",
+    "license": "MIT",
+    "keywords": [
+        "phonegap",
+        "cordova",
+        "addressbook",
+        "contacts",
+        "contactpicker",
+        "android",
+        "ios",
+        "wp8"
+    ],
+    "platforms": [
+        "android",
+        "ios",
+        "wp8"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}

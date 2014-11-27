@@ -9,12 +9,35 @@
         <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.4.min.css">
         <script src="jquery-mobile/jquery.min.js"></script>
         <script src="jquery-mobile/jquery.mobile-1.4.4.min.js"></script>
+        
+        <script>
+            $(function() {
+
+              // Update the contents of the toolbars
+              $( document ).on( "pagecontainerchange", function() {
+                               // Each of the four pages in this demo has a data-title attribute
+                               // which value is equal to the text of the nav button
+                               // For example, on first page: <div data-role="page" data-title="Info">
+                               var current = $( ".ui-page-active" ).jqmData( "title" );
+                               // Change the heading
+                               $( "[data-role='header'] h1" ).text( current );
+                               // Remove active class from nav buttons
+                               $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+                               // Add active class to current nav button
+                               $( "[data-role='navbar'] a" ).each(function() {
+                                                                  if ( $( this ).text() === current ) {
+                                                                  $( this ).addClass( "ui-btn-active" );
+                                                                  }
+                                                                  });
+                               });
+            </script>
+        
         <title>SOS App</title>
     </head>
     <body>
        
        <!-- Start of first page: #one -->
-       <div data-role="page" id="one">
+       <div data-role="page" id="one" data-title="HOME">
            
            <div data-role="header" data-position="fixed">
                <h1>SOS App</h1>
@@ -32,33 +55,36 @@
            <div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 		            <ul>
-		                <li><a href="#" data-icon="home" class="ui-btn-active">Home</a></li>
-		                <li><a href="#" data-icon="navigation">Map</a></li>
-		                <li><a href="#" data-icon="action">Report</a></li>
-		                <li><a href="#" data-icon="gear">Setup</a></li>
+		                <li><a href="#one" data-icon="home" class="ui-btn-active">Home</a></li>
+		                <li><a href="#two" data-icon="navigation">Map</a></li>
+		                <li><a href="#four" data-icon="action">Report</a></li>
+		                <li><a href="#five" data-icon="gear">Setup</a></li>
 		            </ul>
 			   </div><!-- /navbar -->
            </div><!-- /footer -->
        </div><!-- /page one -->
        
        <!-- Start of second page: #two -->
-       <div data-role="page" id="two" data-theme="a" data-position="fixed">
+       <div data-role="page" id="two" data-theme="a" data-position="fixed" data-title="Map">
            
            <div data-role="header">
-               <h1>Two</h1>
+               <h1>PLAN A TRIP</h1>
            </div><!-- /header -->
            
            <div role="main" class="ui-content">
-               <h2>Two</h2>
-               <p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
-               <p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-               <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
-               
+               <h2>Get Directions</h2>
+			   
+                <label for="text-basic">From:</label>
+                <input name="from" id="from" value="" type="text">  
+				<label for="text-basic">To:</label>
+                <input name="To" id="To" value="" type="text">
+                <label for="text-basic">Time:</label>
+                <input name="Time" id="Time" value="" type="text">	
+                <p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show Security Rank/Map </a></p>
+				
            </div><!-- /content -->
            
-           <div data-role="footer">
-               <h4>Page Footer</h4>
-           </div><!-- /footer -->
+
        </div><!-- /page two -->
        
        <!-- Start of third page: #popup -->
@@ -80,7 +106,55 @@
        </div><!-- /page popup -->
        
        
-       
+       <!-- Start of fourth page: #four -->
+       <div data-role="page" id="four" data-theme="a" data-position="fixed" data-title="Report">
+           
+           <div data-role="header">
+               <h1>REPORT INCIDENT</h1>
+           </div><!-- /header -->
+           
+           <div role="main" class="ui-content">
+                <h2></h2>
+			   
+                <label for="text-basic">Location:</label>
+                <input name="location" id="location" value="" type="text">  
+				<label for="text-basic">Time:</label>
+                <input name="Time" id="Time" value="" type="text">
+                <label for="text-basic">Incident Details:</label>
+                <input name="incident details" id="incident details" value="" type="text">	
+                <p><br><br><a href="#four" class="ui-btn ui-shadow ui-corner-all">Report Incident </a></p>
+				
+           </div><!-- /content -->
+           
+
+       </div><!-- /page four -->
+	   
+	   <!-- Start of fifth page: #five -->
+       <div data-role="page" id="five" data-theme="a" data-position="fixed" data-title="Setup">
+           
+           <div data-role="header">
+               <h1>SETUP</h1>
+           </div><!-- /header -->
+           
+           <div role="main" class="ui-content">
+               <h2>History</h2>
+			   
+                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">SOS Sounded </a></p>
+                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Trips Planned</a></p>
+                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Incidents Reported </a></p>
+		
+			
+			
+				<h3>Settings</h3>
+			
+                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Share Location </a></p>
+                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all"> </a></p>				
+                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Share Nearby Contacts </a></p>
+				
+           </div><!-- /content -->
+           
+                   
+       </div><!-- /page five -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

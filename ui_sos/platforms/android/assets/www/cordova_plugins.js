@@ -176,6 +176,27 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.kolwit.pickcontact/www/PickContact.js",
+        "id": "com.kolwit.pickcontact.PickContact",
+        "clobbers": [
+            "PickContact"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.dialogs/www/notification.js",
+        "id": "org.apache.cordova.dialogs.notification",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.dialogs/www/android/notification.js",
+        "id": "org.apache.cordova.dialogs.notification_android",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -333,6 +354,8 @@ module.exports.metadata =
     "org.apache.cordova.media-capture": "0.3.4",
     "org.apache.cordova.contacts": "0.2.14",
     "org.apache.cordova.console": "0.2.11",
+    "com.kolwit.pickcontact": "1.0.4",
+    "org.apache.cordova.dialogs": "0.2.10",
     "org.apache.cordova.file": "1.3.1"
 }
 // BOTTOM OF METADATA
