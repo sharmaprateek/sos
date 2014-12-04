@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Flashlight\"><param name=\"ios-package\" value=\"Flashlight\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -166,6 +170,9 @@
             "PACKAGE_NAME": "com.app.sos"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "nl.x-services.plugins.flashlight": {
             "PACKAGE_NAME": "com.app.sos"
         }
     },

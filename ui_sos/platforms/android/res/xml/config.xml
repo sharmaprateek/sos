@@ -29,6 +29,9 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
+    <feature name="Flashlight">
+        <param name="android-package" value="nl.xservices.plugins.Flashlight" />
+    </feature>
     <name>SOSApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

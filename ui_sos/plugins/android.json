@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Flashlight\"><param name=\"android-package\" value=\"nl.xservices.plugins.Flashlight\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -90,6 +94,12 @@
                             "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
                             "count": 1
                         }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -124,6 +134,9 @@
             "PACKAGE_NAME": "com.app.sos"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "nl.x-services.plugins.flashlight": {
             "PACKAGE_NAME": "com.app.sos"
         }
     },

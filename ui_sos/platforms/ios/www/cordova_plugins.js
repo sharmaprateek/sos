@@ -246,6 +246,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/nl.x-services.plugins.flashlight/www/Flashlight.js",
+        "id": "nl.x-services.plugins.flashlight.Flashlight",
+        "clobbers": [
+            "window.plugins.flashlight"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -405,6 +412,7 @@ module.exports.metadata =
     "org.apache.cordova.console": "0.2.11",
     "com.kolwit.pickcontact": "1.0.4",
     "org.apache.cordova.dialogs": "0.2.10",
+    "nl.x-services.plugins.flashlight": "2.0.2",
     "org.apache.cordova.file": "1.3.1"
 }
 // BOTTOM OF METADATA

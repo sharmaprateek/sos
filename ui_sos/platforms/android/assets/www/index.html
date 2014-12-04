@@ -45,13 +45,11 @@
            
            <div role="main" class="ui-content">
 
-               <p><a href="#two" class="ui-btn ui-shadow ui-corner-all"><br>SOS<br><br>Initiating in 5<br><br><br></a></p>
+               <p><a href="#" onclick="sos.sosButton()" class="ui-btn ui-shadow ui-corner-all"><br>SOS<br><br><span id="countdownDiv">Initiating in 5</span><br><br></a></p>
 	   
-               <p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
+               <p id="cancelSOSButton"><a href="#" onclick="sos.cancelCountDown()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
+               
            </div><!-- /content -->
-
-           <input type='button' onclick='sos.util.showContactPicker()' value="test">
-
            
            <div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
