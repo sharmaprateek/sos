@@ -77,6 +77,7 @@ sos.activateCountDown = function(secs) {
                    sos.activateCountDown(secs-1);
         },1000);
     } else if (secs === 0 && !sos.countDownCancelled) {
+        $("#cancelSOSButton").hide();
         sos.soundSOSNow();
     }
 };
@@ -111,21 +112,21 @@ sos.soundSOSNow = function() {
     $("#countdownDiv").html("Click to STOP");
     
     
-    window.plugins.flashlight.available(function(isAvailable) {
-                                        if (isAvailable) {
+    window.plugins.flashlight.available( function(isAvailable) {
+
+            if (isAvailable) {
                                         
-                                        // switch on
-                                        window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
-                                        
-                                        // switch off after 3 seconds
-                                        setTimeout(function() {
-                                                   window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-                                                   }, 3000);
-                                        
-                                        } else {
-                                       navigator.notification.alert("Flashlight not available on this device");
-                                        }
-                                        });
+                // switch on
+                window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+                        
+                // switch off after 3 seconds
+                setTimeout(function() {
+                    window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+                }, 3000);
+            } else {
+                // navigator.notification.alert("Flashlight not available on this device");
+            }
+    });
 
 };
 
@@ -133,6 +134,7 @@ sos.sosButton = function() {
     if (sos.isAlarmOn === true) {
         sos.stopSOS();
     } else {
+        sos.cancelCountDown();
         sos.soundSOSNow();
     }
 };

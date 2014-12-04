@@ -77,6 +77,7 @@ sos.activateCountDown = function(secs) {
                    sos.activateCountDown(secs-1);
         },1000);
     } else if (secs === 0 && !sos.countDownCancelled) {
+        $("#cancelSOSButton").hide();
         sos.soundSOSNow();
     }
 };
@@ -133,6 +134,7 @@ sos.sosButton = function() {
     if (sos.isAlarmOn === true) {
         sos.stopSOS();
     } else {
+        sos.cancelCountDown();
         sos.soundSOSNow();
     }
 };
