@@ -13,8 +13,10 @@ logger = logging.getLogger(__name__)
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwner,)
     def pre_save(self, obj):
         obj.owner = self.request.user
+
 
 class ContactsViewSet(viewsets.ModelViewSet):
     queryset = Contacts.objects.all()

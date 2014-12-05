@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.4.min.css">
         <script src="jquery-mobile/jquery.min.js"></script>
         <script src="jquery-mobile/jquery.mobile-1.4.4.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
         
         <script>
             $(function() {
@@ -48,21 +49,82 @@
                <p><a href="#" onclick="sos.sosButton()" class="ui-btn ui-shadow ui-corner-all"><br>SOS<br><br><span id="countdownDiv">Initiating in 5</span><br><br></a></p>
 	   
                <p id="cancelSOSButton"><a href="#" onclick="sos.cancelCountDown()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
-               
+
+               <p id="test"><a href="#" onclick="sos.gotoSignupPage()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Sign Up </a></p>
+
            </div><!-- /content -->
            
            <div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 		            <ul>
 		                <li><a href="#one" data-icon="home" class="ui-btn-active">Home</a></li>
-		                <li><a href="#two" data-icon="navigation">Map</a></li>
+		                <li><a href="#signup" data-icon="navigation">Map</a></li>
 		                <li><a href="#four" data-icon="action">Report</a></li>
 		                <li><a href="#five" data-icon="gear">Setup</a></li>
 		            </ul>
 			   </div><!-- /navbar -->
            </div><!-- /footer -->
        </div><!-- /page one -->
-       
+
+
+
+
+    <!-- Start of Sign up / login page -->
+    <div data-role="page" id="signup" data-title="Sign Up">
+        
+        <div data-role="header" data-position="fixed">
+            <h1>Sign Up</h1>
+        </div><!-- /header -->
+        
+        <div role="main" class="ui-content">
+            
+            <label for="first_name">First Name:</label>
+            <input id="first_name" name="first_name" value="" type="text">
+                
+            <label for="last_name">Last Name:</label>
+            <input id="last_name" name="last_name" value="" type="text">
+                
+            <label for="username">Username:</label>
+            <input id="username" name="username" value="" type="text">
+                
+            <label for="password">Password:</label>
+            <input id="password" name="password" value="" type="password">
+
+            <label for="confirm_password">Confirm:</label>
+            <input id="confirm_password" name="confirm_password" value="" type="password">
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" value="" type="text">
+                
+            <p><a href="#" onclick="sos.user.register()" class="ui-btn ui-shadow ui-corner-all">Sign Up</a></p>
+
+
+
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-theme="a" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#five" data-icon="gear">Log in</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div><!-- /page one -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        <!-- Start of second page: #two -->
        <div data-role="page" id="two" data-theme="a" data-position="fixed" data-title="Map">
            
