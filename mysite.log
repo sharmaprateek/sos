@@ -1959,3 +1959,11 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 230, in get_permissions
     return [permission() for permission in self.permission_classes]
 TypeError: 'type' object is not iterable
+[06/Dec/2014 04:20:24] ERROR [django.request:224] Internal Server Error: /register
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.2.216:8000/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[06/Dec/2014 04:26:05] WARNING [django.request:143] Not Found: /favicon.ico

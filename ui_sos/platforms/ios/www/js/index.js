@@ -45,7 +45,12 @@ var app = {
             sos.gotoSignupPage();
         }
         
-
+        $( document ).on( "mobileinit", function() {
+            $.mobile.loader.prototype.options.text = "loading";
+            $.mobile.loader.prototype.options.textVisible = false;
+            $.mobile.loader.prototype.options.theme = "a";
+            $.mobile.loader.prototype.options.html = "";
+        });
     },
     
     // initialize the countdown to raise alarm
@@ -73,6 +78,8 @@ app.initialize();
 // variable init section
 sos.countDownCancelled = false;
 sos.isAlarmOn = false;
+sos.baseURL = "http://192.168.2.216:8000/"
+
 
 sos.server = {};
 sos.user = {};
@@ -134,15 +141,58 @@ sos.user.register = function() {
     if (!sos.util.isValidEmail(signupData['email'])) {
         navigator.notification.alert("Please enter a valid email address.");
         $("#email").val("");
+        $("#email").focus("");
     }
     
-}
+    delete(signupData['confirm_password']);
+    
+    $.ajax({
+           url: sos.baseURL + "register/",
+           contentType: "application/json",
+           type: 'post',
+           data: JSON.stringify(signupData),
+           success: function(xhr, status, response) {
+                console.log(status + " -- " + response);
+                localStorage.setItem("username",signupData["username"]);
+                localStorage.setItem("email",signupData["email"]);
+           
+                navigator.notification.alert("User sign up successful.");
+                sos.gotoHomePage();
+           },
+           error: function(xhr, data, error) {
+               if (xhr.responseText) {
+                    var errorDetail = "";
+                    var resp = JSON.parse(xhr.responseText);
+                    for (error in resp) {
+                        errorDetail += resp[error][0] + "\n";
+                    }
+                    navigator.notification.alert(errorDetail);
+               } else {
+                    navigator.notification.alert("User sign up unsuccessful. Please try again later.");
+               }
+               
+               console.log(data + " -- " + error + " --> " + xhr.responseText);
+           }
+    });
+    
+};
 
+sos.gotoHomePage = function() {
+    $.mobile.changePage("#home");
+    sos.cancelCountDown();
+};
+           
 sos.gotoSignupPage = function() {
     $.mobile.changePage("#signup");
 }
 
 sos.isRegisteredUser = function() {
+    if (localStorage.getItem('username')) {
+        sos.user.username = localStorage.getItem('username');
+        sos.user.email = localStorage.getItem('email');
+//        sos.user.token = localStorage.getItem('toekn');
+        return true;
+    }
     return false;
 }
 
