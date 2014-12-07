@@ -47,6 +47,10 @@
                         {
                             "xml": "<feature name=\"Flashlight\"><param name=\"android-package\" value=\"nl.xservices.plugins.Flashlight\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.jsmobile.plugins.sms.Sms\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -99,6 +103,10 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -137,6 +145,9 @@
             "PACKAGE_NAME": "com.app.sos"
         },
         "nl.x-services.plugins.flashlight": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "com.jsmobile.plugins.sms": {
             "PACKAGE_NAME": "com.app.sos"
         }
     },

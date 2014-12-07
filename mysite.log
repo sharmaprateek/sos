@@ -1967,3 +1967,1215 @@ Traceback (most recent call last):
     "settings.") % (new_url[0], new_url[1]))
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.2.216:8000/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
 [06/Dec/2014 04:26:05] WARNING [django.request:143] Not Found: /favicon.ico
+[07/Dec/2014 13:35:43] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    body="Test message",
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21606: The From phone number +15107717282 is not a valid, SMS-capable inbound phone number or short code for your account.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21606[0m
+
+
+[07/Dec/2014 13:36:23] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    body="Test message",
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21606: The From phone number +15107717282 is not a valid, SMS-capable inbound phone number or short code for your account.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21606[0m
+
+
+[07/Dec/2014 14:22:58] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 14:23:47] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'dict' object has no attribute 'geolocation'
+[07/Dec/2014 14:26:44] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 14:28:28] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 14:28:29] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 14:28:45] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 15:09:33] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'QueryDict' object has no attribute 'geolocation'
+[07/Dec/2014 15:11:43] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:13:32] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:15:55] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:16:48] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:18:39] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:27:09] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:31:50] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 29, in send_message
+    his approximate location is: """ + data.geolocation
+AttributeError: 'dict' object has no attribute 'geolocation'
+[07/Dec/2014 15:47:45] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 35, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21211: The 'To' number [ is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+[07/Dec/2014 15:51:57] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 29, in send_message
+    his approximate location is: """ + data['geolocation']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'geolocation'"
+[07/Dec/2014 15:57:12] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[07/Dec/2014 15:58:12] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 30, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 15:59:43] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 30, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 16:00:02] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 23, in send_message
+    b = data[0]
+KeyError: 0
+[07/Dec/2014 16:00:19] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 30, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 16:00:37] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 30, in send_message
+    data = json.loads(data)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+[07/Dec/2014 16:01:06] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 33, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21211: The 'To' number [ is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+[07/Dec/2014 16:01:37] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 33, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21211: The 'To' number [ is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+[07/Dec/2014 16:03:17] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 28, in send_message
+    phoneNumbers = eval(data.phoneNumbers)
+AttributeError: 'dict' object has no attribute 'phoneNumbers'
+[07/Dec/2014 16:03:53] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 33, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21608: The number +15107717282 is unverified. Trial accounts cannot send messages to unverified numbers; verify +15107717282 at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21608[0m
+
+
+[07/Dec/2014 16:09:37] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 34, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21608: The number +15107717282 is unverified. Trial accounts cannot send messages to unverified numbers; verify +15107717282 at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21608[0m
+
+
+[07/Dec/2014 16:16:45] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 25, in send_message
+    print User.objects.get(request.user)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 151, in get
+    return self.get_queryset().get(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 301, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 593, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 611, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1198, in add_q
+    if not self.need_having(q_object):
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1161, in need_having
+    return any(self.need_having(c) for c in obj.children)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1161, in <genexpr>
+    return any(self.need_having(c) for c in obj.children)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1158, in need_having
+    return (refs_aggregate(obj[0].split(LOOKUP_SEP), self.aggregates)
+TypeError: 'User' object does not support indexing
+[07/Dec/2014 16:24:50] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 23, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:25:54] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 23, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:26:53] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:30:20] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 31, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+TypeError: eval() arg 1 must be a string or code object
+[07/Dec/2014 16:31:01] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:32:57] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:35:21] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 24, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:37:17] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 32, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:37:55] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 34, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:38:26] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 36, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:40:15] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 36, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:40:52] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 36, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:41:28] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 34, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:43:47] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 26, in send_message
+    print data['phoneNumbers']
+  File "/Library/Python/2.7/site-packages/django/utils/datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'phoneNumbers'"
+[07/Dec/2014 16:46:41] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 34, in send_message
+    phoneNumbers = eval(data['phoneNumbers'])
+TypeError: eval() arg 1 must be a string or code object
+[07/Dec/2014 16:52:07] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 39, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21608: The number +15107717282 is unverified. Trial accounts cannot send messages to unverified numbers; verify +15107717282 at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21608[0m
+
+
+[07/Dec/2014 16:53:03] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 39, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21608: The number +15107717282 is unverified. Trial accounts cannot send messages to unverified numbers; verify +15107717282 at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21608[0m
+
+
+[07/Dec/2014 16:54:37] ERROR [django.request:224] Internal Server Error: /sendsos/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/Library/Python/2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/prateek/sjsu/sos/sos_app/sendsos.py", line 29, in send_message
+    body = message,
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/messages.py", line 122, in create
+    return self.create_instance(kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 341, in create_instance
+    data=transform_params(body))
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 193, in request
+    resp = make_twilio_request(method, uri, auth=self.auth, **kwargs)
+  File "/Library/Python/2.7/site-packages/twilio/rest/resources/base.py", line 160, in make_twilio_request
+    uri=resp.url, msg=message, code=code)
+TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST https://api.twilio.com/2010-04-01/Accounts/ACd5a56d8755bf5172d794ca32769ea857/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49m21608: The number +15107717282 is unverified. Trial accounts cannot send messages to unverified numbers; verify +15107717282 at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21608[0m
+
+

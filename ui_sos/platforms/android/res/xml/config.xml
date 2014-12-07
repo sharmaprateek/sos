@@ -41,4 +41,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Sms">
+        <param name="android-package" value="com.jsmobile.plugins.sms.Sms" />
+    </feature>
 </widget>

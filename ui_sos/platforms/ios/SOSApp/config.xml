@@ -57,6 +57,9 @@
     <feature name="Flashlight">
         <param name="ios-package" value="Flashlight" />
     </feature>
+    <feature name="Sms">
+        <param name="ios-package" value="Sms" />
+    </feature>
     <name>SOSApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -61,6 +61,9 @@
 		EA70689D045A4352913D6C19 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D88D4A220C4F6A972D77DD /* CoreLocation.framework */; };
 		EC071174579D4BBD83EFB68F /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B481AF9712C47B4A61946B3 /* CDVLocalFilesystem.m */; };
 		FA5CA399139543BA9733F648 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CF13F2A64D462E83902638 /* CDVSound.m */; };
+		E5665BE6D1104FA0A819CD86 /* Sms.h in Resources */ = {isa = PBXBuildFile; fileRef = BB24429A30404ACABF25565A /* Sms.h */; };
+		3DDFD71AFF0A48F1AB10BDA0 /* Sms.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F974CFACFB54E4993EA3C71 /* Sms.m */; };
+		DFB9C80A034C43B28731A411 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71460CD7743747158282476D /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +168,9 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = SOSApp/config.xml; sourceTree = "<group>"; };
+		BB24429A30404ACABF25565A /* Sms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Sms.h"; path = "com.jsmobile.plugins.sms/Sms.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		1F974CFACFB54E4993EA3C71 /* Sms.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Sms.m"; path = "com.jsmobile.plugins.sms/Sms.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		71460CD7743747158282476D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,7 @@
 				9F3B978FE636488188E1FAD5 /* AddressBook.framework in Frameworks */,
 				E5AB2744B6F14FD3B09BCA6A /* AddressBookUI.framework in Frameworks */,
 				2F468D32558E47A2BAF50F7D /* AudioToolbox.framework in Frameworks */,
+				DFB9C80A034C43B28731A411 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +289,7 @@
 				4503ECA70E4947089F54D00B /* AddressBook.framework */,
 				189CA5DFF56C41C6A87A29DE /* AddressBookUI.framework */,
 				A91A77CF892845CB9CED60DF /* AudioToolbox.framework */,
+				71460CD7743747158282476D /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -330,6 +338,8 @@
 				08E23A515B314D828441DD00 /* CDVNotification.h */,
 				AB4548CBFCDA423EB8F4BC6D /* Flashlight.m */,
 				6E5661BE9B3A4DE4A9859872 /* Flashlight.h */,
+				BB24429A30404ACABF25565A /* Sms.h */,
+				1F974CFACFB54E4993EA3C71 /* Sms.m */,
 			);
 			name = Plugins;
 			path = SOSApp/Plugins;
@@ -547,6 +557,8 @@
 				552FD9BF66424864A1FD9C97 /* PickContact.m in Sources */,
 				740F6AFBD02C4669A3CBEA0A /* CDVNotification.m in Sources */,
 				7159F04F8B4D4D7C8B2EBAE5 /* Flashlight.m in Sources */,
+				E5665BE6D1104FA0A819CD86 /* Sms.h in Resources */,
+				3DDFD71AFF0A48F1AB10BDA0 /* Sms.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

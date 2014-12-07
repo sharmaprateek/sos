@@ -253,6 +253,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.jsmobile.plugins.sms/www/sms.js",
+        "id": "com.jsmobile.plugins.sms.sms",
+        "clobbers": [
+            "window.sms"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -413,6 +420,7 @@ module.exports.metadata =
     "com.kolwit.pickcontact": "1.0.4",
     "org.apache.cordova.dialogs": "0.2.10",
     "nl.x-services.plugins.flashlight": "2.0.2",
+    "com.jsmobile.plugins.sms": "0.0.1",
     "org.apache.cordova.file": "1.3.1"
 }
 // BOTTOM OF METADATA

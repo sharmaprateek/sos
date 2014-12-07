@@ -59,6 +59,10 @@
                         {
                             "xml": "<feature name=\"Flashlight\"><param name=\"ios-package\" value=\"Flashlight\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Sms\"><param name=\"ios-package\" value=\"Sms\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -126,6 +130,12 @@
                             "xml": "true",
                             "count": 1
                         }
+                    ],
+                    "MessageUI.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -173,6 +183,9 @@
             "PACKAGE_NAME": "com.app.sos"
         },
         "nl.x-services.plugins.flashlight": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "com.jsmobile.plugins.sms": {
             "PACKAGE_NAME": "com.app.sos"
         }
     },
