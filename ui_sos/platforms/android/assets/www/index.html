@@ -9,27 +9,61 @@
         <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.4.min.css">
         <script src="jquery-mobile/jquery.min.js"></script>
         <script src="jquery-mobile/jquery.mobile-1.4.4.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
         
         <script>
             $(function() {
 
-              // Update the contents of the toolbars
-              $( document ).on( "pagecontainerchange", function() {
-                               // Each of the four pages in this demo has a data-title attribute
-                               // which value is equal to the text of the nav button
-                               // For example, on first page: <div data-role="page" data-title="Info">
-                               var current = $( ".ui-page-active" ).jqmData( "title" );
-                               // Change the heading
-                               $( "[data-role='header'] h1" ).text( current );
-                               // Remove active class from nav buttons
-                               $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
-                               // Add active class to current nav button
-                               $( "[data-role='navbar'] a" ).each(function() {
-                                                                  if ( $( this ).text() === current ) {
-                                                                  $( this ).addClass( "ui-btn-active" );
-                                                                  }
-                                                                  });
-                               });
+            // Update the contents of the toolbars
+                $( document ).on( "pagecontainerchange", function() {
+                    // Each of the four pages in this demo has a data-title attribute
+                    // which value is equal to the text of the nav button
+                    // For example, on first page: <div data-role="page" data-title="Info">
+                    var current = $( ".ui-page-active" ).jqmData( "title" );
+                    var currentTab = $( ".ui-btn-active" );
+                    var count = 0;
+                    // Change the heading
+//                    $( "[data-role='header'] h1" ).text( current );
+                    // Remove active class from nav buttons
+                    $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+                    // Add active class to current nav button
+                    $( "[data-role='navbar'] a" ).each(function() {
+                        if ( $( this ).text() === current ) {
+                            $( this ).addClass( "ui-btn-active" );
+                            count++;
+                        }
+                    });
+                    if (count == 0) {
+                        currentTab.addClass("ui-btn-active");
+                    }
+
+                });
+            });
+            
+            
+            var map;
+            document.addEventListener("deviceready", function() {
+                var mapDiv = document.getElementById("map_canvas");
+                                      
+                map = plugin.google.maps.Map.getMap(mapDiv);
+
+                map = plugin.google.maps.Map.getMap({
+                                                    'controls': {
+                                                    'compass': true,
+                                                    'myLocationButton': true,
+                                                    'indoorPicker': true,
+                                                    'zoom': true
+                                                    }
+                });
+                                      
+                map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+
+                                      
+            }, false);
+            
+            function onMapInit(map) {
+            }
+            
             </script>
         
         <title>SOS App</title>
@@ -37,10 +71,10 @@
     <body>
        
        <!-- Start of first page: #one -->
-       <div data-role="page" id="one" data-title="HOME">
+       <div data-role="page" id="home" data-title="Home">
            
            <div data-role="header" data-position="fixed">
-               <h1>SOS App</h1>
+               <h1>Home</h1>
            </div><!-- /header -->
            
            <div role="main" class="ui-content">
@@ -48,21 +82,137 @@
                <p><a href="#" onclick="sos.sosButton()" class="ui-btn ui-shadow ui-corner-all"><br>SOS<br><br><span id="countdownDiv">Initiating in 5</span><br><br></a></p>
 	   
                <p id="cancelSOSButton"><a href="#" onclick="sos.cancelCountDown()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
-               
+
            </div><!-- /content -->
            
            <div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 		            <ul>
-		                <li><a href="#one" data-icon="home" class="ui-btn-active">Home</a></li>
-		                <li><a href="#two" data-icon="navigation">Map</a></li>
+		                <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+		                <li><a href="#map" data-icon="navigation">Map</a></li>
 		                <li><a href="#four" data-icon="action">Report</a></li>
-		                <li><a href="#five" data-icon="gear">Setup</a></li>
+		                <li><a href="#settings" data-icon="gear">Settings</a></li>
 		            </ul>
 			   </div><!-- /navbar -->
            </div><!-- /footer -->
        </div><!-- /page one -->
-       
+
+
+
+
+    <!-- Start of Sign up / login page -->
+    <div data-role="page" id="signup" data-title="Sign Up">
+        
+        <div data-role="header" data-position="fixed">
+            <h1>Sign Up</h1>
+        </div><!-- /header -->
+        
+        <div role="main" class="ui-content">
+            
+            <label for="first_name">First Name:</label>
+            <input id="first_name" name="first_name" value="" type="text">
+                
+            <label for="last_name">Last Name:</label>
+            <input id="last_name" name="last_name" value="" type="text">
+                
+            <label for="username">Username:</label>
+            <input id="username" name="username" value="" type="text">
+                
+            <label for="password">Password:</label>
+            <input id="password" name="password" value="" type="password">
+
+            <label for="confirm_password">Confirm:</label>
+            <input id="confirm_password" name="confirm_password" value="" type="password">
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" value="" type="text">
+                
+            <p><a href="#" onclick="sos.user.register()" class="ui-btn ui-shadow ui-corner-all">Sign Up</a></p>
+
+
+
+        </div><!-- /content -->
+        
+        <div data-role="footer" data-theme="a" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#login" data-icon="gear">Log in</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div><!-- /page one -->
+
+
+
+
+
+
+<!-- Start of Sign up / login page -->
+<div data-role="page" id="login" data-title="Sign Up">
+    
+    <div data-role="header" data-position="fixed">
+        <h1>Log In</h1>
+    </div><!-- /header -->
+    
+    <div role="main" class="ui-content">
+        
+        <label for="login_username">Username:</label>
+        <input id="login_username" name="login_username" value="" type="text">
+
+        <label for="login_password">Password:</label>
+        <input id="login_password" name="login_password" value="" type="password">
+
+        <p><a href="#" onclick="sos.user.login()" class="ui-btn ui-shadow ui-corner-all">Log In</a></p>
+
+
+
+        </div><!-- /content -->
+    
+    <div data-role="footer" data-theme="a" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#signup" data-icon="gear">Sign Up</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div><!-- /page one -->
+
+
+
+<!-- Start of first page: #map -->
+<div data-role="page" id="map" data-title="Map">
+    
+    <div data-role="header" data-position="fixed">
+        <h1>Map</h1>
+    </div><!-- /header -->
+    
+    <div role="main" class="ui-content">
+        <div style="width:100%;height:400px" id="map_canvas">
+            <div>
+                <button id="searchBtn" onclick="sos.getCurrentLocationOnMap()">Find me</button>
+            </div>
+
+        </div>
+        
+    </div><!-- /content -->
+    
+    <div data-role="footer" data-theme="a" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                <li><a href="#map" data-icon="navigation">Map</a></li>
+                <li><a href="#report" data-icon="action">Report</a></li>
+                <li><a href="#settings" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div><!-- /page one -->
+
+
+
+
+
+
        <!-- Start of second page: #two -->
        <div data-role="page" id="two" data-theme="a" data-position="fixed" data-title="Map">
            
@@ -128,33 +278,93 @@
 
        </div><!-- /page four -->
 	   
-	   <!-- Start of fifth page: #five -->
-       <div data-role="page" id="five" data-theme="a" data-position="fixed" data-title="Setup">
+	   <!-- Start of fifth page: #settings -->
+       <div data-role="page" id="settings" data-theme="a" data-position="fixed" data-title="Settings">
            
            <div data-role="header">
-               <h1>SETUP</h1>
+               <h1>Settings</h1>
            </div><!-- /header -->
            
            <div role="main" class="ui-content">
-               <h2>History</h2>
-			   
-                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">SOS Sounded </a></p>
-                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Trips Planned</a></p>
-                <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Incidents Reported </a></p>
-		
+
+                <h2>Settings</h2>
+                <p><a href="#" onclick="sos.gotoContactsPage();" class="ui-btn ui-shadow ui-corner-all">Emergency contacts</a></p>
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">SOS Sounded </a></p>
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Trips Planned</a></p>
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Incidents Reported </a></p>
+                
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Share Location</a></p>
+                <input type="checkbox" name="checkbox-mini" id="checkbox-1">
+                    <label for="checkbox-1">Alert nearby users when in Emergency </label>
+
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all" onclick="sos.user.signout()">Sign Out</a></p>
+                
+
 			
-			
-				<h3>Settings</h3>
-			
-                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Share Location </a></p>
-                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all"> </a></p>				
-                 <p><a href="#five" class="ui-btn ui-shadow ui-corner-all">Share Nearby Contacts </a></p>
-				
+        
            </div><!-- /content -->
            
-                   
+           <div data-role="footer" data-theme="a" data-position="fixed">
+               <div data-role="navbar">
+                   <ul>
+                       <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                       <li><a href="#map" data-icon="navigation">Map</a></li>
+                       <li><a href="#four" data-icon="action">Report</a></li>
+                       <li><a href="#settings" data-icon="gear">Settings</a></li>
+                   </ul>
+               </div><!-- /navbar -->
+           </div><!-- /footer -->
        </div><!-- /page five -->
+       
+       
+       
+       <!-- Start of fourth page: #four -->
+       <div data-role="page" id="contacts" data-theme="a" data-position="fixed" data-title="Contacts">
+           
+            <div data-role="header">
+                <a href="#settings" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+               <h1>Emergency Contacts</h1>
+               <a href="#" onclick="sos.addContact();" class="ui-btn ui-btn-right ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-plus">Add</a>
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+   
+               <ul data-role="listview" data-inset="true" id="contactList">
+
+               </ul>
+
+            </div><!-- /content -->
+            <div data-role="footer" data-theme="a" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="#map" data-icon="navigation">Map</a></li>
+                        <li><a href="#four" data-icon="action">Report</a></li>
+                        <li><a href="#settings" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+
+       </div><!-- /page four -->
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/Flashlight.js"></script>
+        <script src="http://jsconsole.com/remote.js?9C0CB466-4D2F-4722-802A-C1D2E35CD4B1"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

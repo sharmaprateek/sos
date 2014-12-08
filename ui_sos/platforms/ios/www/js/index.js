@@ -79,7 +79,7 @@ app.initialize();
 // variable init section
 sos.countDownCancelled = false;
 sos.isAlarmOn = false;
-sos.baseURL = "http://192.168.2.216:8000/"
+sos.baseURL = "http://192.168.1.106:8000/"
 
 
 sos.server = {};
@@ -107,15 +107,23 @@ sos.user.getAuthToken = function() {
                    async: false,
                    data: JSON.stringify({username: sos.user.username, password: sos.user.password}),
                    success: function(response, status) {
+                   console.log(response.token);
+                        console.log(status + " - authToken call - " + response.token);
 
-                       console.log(status + " - autToken call - " + response.token);
-
-                       localStorage.setItem("AuthToken", response.token);
-                       sos.user.AuthToken = response.token;
-
-                       sos.gotoHomePage();
+                        localStorage.setItem("AuthToken", response.token);
+                        sos.user.AuthToken = response.token;
+                   console.log("going to home page");
+                        sos.gotoHomePage();
+                   console.log("going to settings page");
+                        sos.gotoSettingsPage();
+                   console.log("calling timed out alert");
+                        setTimeout(function(){navigator.notification.alert("Please add a few contacts to reach out to when in emeregency.", function(){sos.addContact()});},2000);
+                  console.log("going to contacts page");
+                        sos.gotoContactsPage();
+                   
                    },
                    error: function(xhr, data, error) {
+                        console.log('error while getting token');
                        if (xhr.responseText) {
                            var errorDetail = "";
                            var resp = JSON.parse(xhr.responseText);
@@ -134,9 +142,11 @@ sos.user.getAuthToken = function() {
 
         } else {
             sos.gotoLoginPage();
+            return false;
         }
     }
 //    navigator.notification.alert('token val: ' + sos.user.AuthToken + 'token type: '+ typeof sos.user.AuthToken);
+    console.log("returning token: "+sos.user.AuthToken);
     return sos.user.AuthToken;
     
 }
@@ -149,8 +159,10 @@ sos.user.login = function() {
     var token = sos.user.getAuthToken();
     
     if (token) {
+        console.log("storing user info locally");
         localStorage.setItem("username",sos.user.username);
         localStorage.setItem("password",sos.user.password);
+        sos.user.registerDevice();
     }
 }
 
@@ -208,8 +220,11 @@ sos.user.register = function() {
                 sos.user.email = signupData["email"];
            
                 // navigator.notification.alert("User sign up successful.");
-                sos.gotoHomePage();
+                //sos.gotoHomePage();
+           
+                sos.gotoContactsPage();
                 sos.user.getAuthToken();
+                sos.user.registerDevice();
 
            },
            error: function(xhr, data, error) {
@@ -230,6 +245,25 @@ sos.user.register = function() {
     
 };
 
+sos.user.registerDevice = function() {
+    var dateField = sos.util.getCurrentDate();
+    var data = JSON.stringify({device_uuid: device.uuid, date_added:dateField, phone_number: "000"});
+    console.log(data);
+    $.ajax({
+           url: sos.baseURL + 'mobile-info/',
+           type: 'post',
+           contentType: 'application/json',
+           data: data,
+           headers: { 'Authorization': 'Token ' + sos.user.AuthToken },
+           success: function(response) {
+               console.log('mobile device registered successfully.');
+           },
+           error: function(xhr) {
+               console.log(xhr.responseText);
+           },
+    });
+}
+
 sos.gotoHomePage = function() {
     $.mobile.changePage("#home");
     sos.cancelCountDown();
@@ -248,6 +282,19 @@ sos.gotoLoginPage = function() {
 sos.gotoContactsPage = function() {
     $.mobile.changePage("#contacts");
     sos.showContactList();
+};
+
+sos.gotoIncidentReportsPage = function() {
+    $.mobile.changePage("#reports");
+    sos.showIncidentsList();
+};
+
+sos.gotoReportIncidentPage = function() {
+    $.mobile.changePage("#report_incident");
+};
+
+sos.gotoSettingsPage = function() {
+    $.mobile.changePage("#settings");
 };
 
 sos.isRegisteredUser = function() {
@@ -306,8 +353,6 @@ sos.soundSOSNow = function() {
     
     $("#countdownDiv").html("Click to STOP");
     
-    sos.sendSOSMessage();
-    
     window.plugins.flashlight.available( function(isAvailable) {
 
             if (isAvailable) {
@@ -317,37 +362,41 @@ sos.soundSOSNow = function() {
                         
                 // switch off after 3 seconds
                 setTimeout(function() {
-                    window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-                }, 3000);
+                    sos.toggleFlashLight(); // success/error callbacks may be passed
+                }, 1000);
             } else {
                 // navigator.notification.alert("Flashlight not available on this device");
             }
     });
     
-
-    
-    sos.getCurrentLocation();
-    
+    sos.initiateSOS();
 
 };
 
-sos.sendSOSMessage = function() {
+sos.toggleFlashLight = function() {
+    if (sos.isAlarmOn) {
+        window.plugins.flashlight.toggle();
+        setTimeout(function() {
+           sos.toggleFlashLight(); // success/error callbacks may be passed
+        }, 1000);
+    }
+}
+
+sos.sendSOSMessage = function(address) {
     console.log("sending message now");
 
     var contacts = localStorage.getItem("userContacts");
     contacts = JSON.parse(contacts);
-    console.log(contacts);
+
     var pnos = "";
     for (var i=0; i<contacts.length; i++) {
-        console.log("This is single contact: ");
-        console.log(contacts[i]);
-        console.log(contacts[i].phone);
         pnos += contacts[i].phone.toString() + ",";
     }
     pnos = pnos.substring(0,pnos.length-1);
     pnos = pnos.split(',');
 
-    var data = JSON.stringify({phoneNumbers: pnos, geolocation: 'Cali'});
+    var data = JSON.stringify({phoneNumbers: pnos, geolocation: address});
+
     console.log("Final data: " + data);
 
     $.ajax({
@@ -359,47 +408,152 @@ sos.sendSOSMessage = function() {
            success: function(resp) {
                 console.log("message sent, resp: "+resp);
            }, error:function(xhr, data, error) {
-                navigator.notification.alert(data + " -- " + error + " --> " + xhr.responseText);
+                //navigator.notification.alert(data + " -- " + error + " --> " + xhr.responseText);
                 console.log(data + " -- " + error + " --> " + xhr.responseText);
            },
 
     });
     
-//    var messageInfo = {
-//    phoneNumber: "5107717282",
-//    textMessage: "This is a test message"
-//    };
-//    
-//    sms.sendMessage(messageInfo, function(message) {
-//                    console.log("success: " + message);
-//                    }, function(error) {
-//                    console.log("code: " + error.code + ", message: " + error.message);
-//                    });
+};
+
+
+
+sos.getCurrentLocationOnMap = function() {
+
+    var onSuccess = function(location) {
+        var msg = ["Current your location:\n",
+                   "latitude:" + location.latLng.lat,
+                   "longitude:" + location.latLng.lng,
+                   "speed:" + location.speed,
+                   "time:" + location.time,
+                   "bearing:" + location.bearing].join("\n");
+    
+        
+        var request = {
+            'position': location.latLng
+        };
+        plugin.google.maps.Geocoder.geocode(request, function(results) {
+            if (results.length) {
+                var result = results[0];
+                var position = result.position;
+                var address = [
+                               result.subThoroughfare || "",
+                               result.thoroughfare || "",
+                               result.locality || "",
+                               result.adminArea || "",
+                               result.postalCode || "",
+                               result.country || ""].join(", ");
+                map.addMarker({
+                              'position': position,
+                              'title':  address,
+                              }, function(marker) {
+                              
+                              map.animateCamera({
+                                                'target': position,
+                                                'zoom': 17
+                                                }, function() {
+                                                marker.showInfoWindow();
+                                                });
+                              
+                              });
+            } else {
+                console.log("Not found");
+            }
+        });
+        
+
+    };
+    
+    var onError = function(msg) {
+        console.log("error: " + msg);
+    };
+    map.showDialog();
+    
+    map.getMyLocation(onSuccess, onError);
+
 
 };
 
-sos.getCurrentLocation = function() {
-    var onSuccess = function(position) {
-        navigator.notification.alert('Latitude: '          + position.coords.latitude          + '\n' +
-                                     'Longitude: '         + position.coords.longitude         + '\n' +
-                                     'Altitude: '          + position.coords.altitude          + '\n' +
-                                     'Accuracy: '          + position.coords.accuracy          + '\n' +
-                                     'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                                     'Heading: '           + position.coords.heading           + '\n' +
-                                     'Speed: '             + position.coords.speed             + '\n' +
-                                     'Timestamp: '         + position.timestamp                + '\n');
+sos.initiateSOS = function() {
+    
+    
+    var onSuccess = function(location) {
+        var msg = ["Current your location:\n",
+                   "latitude:" + location.latLng.lat,
+                   "longitude:" + location.latLng.lng,
+                   "speed:" + location.speed,
+                   "time:" + location.time,
+                   "bearing:" + location.bearing].join("\n");
+        
+        
+        var request = {
+            'position': location.latLng
+        };
+        plugin.google.maps.Geocoder.geocode(request, function(results) {
+            if (results.length) {
+                var result = results[0];
+                var position = result.position;
+                var completeAddress = [
+                               result.subThoroughfare || "",
+                               result.thoroughfare || "",
+                               result.locality || "",
+                               result.adminArea || "",
+                               result.postalCode || "",
+                               result.country || ""].join(", ");
+                                            
+                var address = (result.subThoroughfare || "") + (result.thoroughfare || "");
+                var city = result.locality || "";
+                var state = result.adminArea || "";
+                var zip = result.postalCode || "";
+                var country = result.country || "";
+
+                sos.sendSOSMessage(completeAddress);
+
+                var dateField = sos.util.getCurrentDate();
+                var incidentData = {longitude: location.latLng.lng, latitude: location.latLng.lat, address: address, city: city, state: state, zip: zip, country: country, summary: "SOS initiated on mobile device.", description: "SOS was triggered on mobile device, user might be in some trouble.", date_recorded: dateField};
+                
+                sos.registerIncident(incidentData);
+            } else {
+                console.log("Not found");
+            }
+        });
+
+        
     };
     
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        navigator.notification.alert('code: '    + error.code    + '\n' +
-                                     'message: ' + error.message + '\n');
-    }
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
+    var onError = function(msg) {
+        console.log("error: " + msg);
+    };
+    
+    map.getMyLocation(onSuccess, onError);
 }
+
+sos.registerIncident = function (incidentData) {
+    console.log(incidentData);
+    console.log(JSON.stringify(incidentData));
+    $.ajax({
+           url: sos.baseURL + "incident/",
+           contentType: "application/json",
+           headers: { 'Authorization': 'Token ' + sos.user.AuthToken },
+           type: 'post',
+           data: JSON.stringify(incidentData),
+           success: function(xhr, status, response) {
+               console.log(status + " - incident register call - " + response);
+           },
+           error: function(xhr, data, error) {
+               if (xhr.responseText) {
+                   var errorDetail = "";
+                   var resp = JSON.parse(xhr.responseText);
+                   for (error in resp) {
+                        errorDetail += resp[error][0] + "\n";
+                    }
+                    navigator.notification.alert("Error while registering incident: " + errorDetail);
+               }
+               console.log(data + " -- " + error + " --> " + xhr.responseText);
+           }
+   });
+
+};
 
 sos.sosButton = function() {
     if (sos.isAlarmOn === true) {
@@ -413,6 +567,7 @@ sos.sosButton = function() {
 sos.stopSOS = function() {
     sos.isAlarmOn = false;
     sos.alarm.stop();
+    window.plugins.flashlight.switchOff();
     $("#countdownDiv").html("Click to Sound Alarm");
 };
 
@@ -465,7 +620,10 @@ sos.addContact = function() {
 
 sos.showContactList = function() {
     var userContacts = localStorage.getItem("userContacts") || [];
-    userContacts = JSON.parse(userContacts);
+    if (typeof userContacts == "string") {
+        userContacts = JSON.parse(userContacts);
+    }
+    
     var contactList = $("#contactList");
     contactList.empty();
     console.log(userContacts);
@@ -479,6 +637,73 @@ sos.showContactList = function() {
     $("#contactList").listview("refresh");
 };
 
+sos.showIncidentsList = function() {
+    $.ajax({
+        url: sos.baseURL + 'incident/',
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        headers: { 'Authorization': 'Token ' + sos.user.AuthToken },
+        success: function(response) {
+            console.log('Incidents retrieved.');
+           console.log(response);
+            var incidentList = $("#incidentsReportedList");
+           sos.sortedIncidentList = {};
+            incidentList.empty();
+
+            for (var i=0 ; i<response.length ; i++) {
+                var text = '<a href="#" onclick="sos.showIncidentDetail('+response[i].id+')">' + response[i].date_recorded + ': ' + response[i].summary +'</a>';
+           
+                sos.sortedIncidentList[response[i].id] = response[i];
+           
+                var l = $('<li />', {html: text});
+                l.appendTo('#incidentsReportedList');
+
+            }
+            incidentList.listview("refresh");
+        },
+        error: function(xhr) {
+            console.log(xhr.responseText);
+        },
+    });
+
+
+};
+
+sos.showIncidentDetail = function(id) {
+    console.log("Popping up records for: "+id);
+    var incident = sos.sortedIncidentList[id];
+    console.log(incident);
+    if (incident) {
+        var htmlContent = "Date: " + incident.date_recorded + "<br><br>Summary: " + incident.summary + "<br><br>Detail: " + incident.description;
+        htmlContent += "<br><br>Location:" + incident.address + ", " + incident.city + ", " + incident.state + ", " + incident.zip + ", " + incident.country
+        console.log(htmlContent);
+        $("#popupContent").html(htmlContent);
+        $.mobile.changePage("#popup");
+        console.log("popup called");
+    }
+    
+};
+
+sos.reportIncident = function() {
+    var address = $("#incident_address").val();
+    var city = $("#incident_city").val();
+    var state = $("#incident_state").val();
+    var country = $("#incident_country").val();
+    var zip = $("#incident_zip").val();
+    var summary = $("#incident_summary").val();
+    var description = $("#incident_details").val();
+    var dateField = $("#incident_date").val();
+    
+    if (address == "" || city == "" || state == "" || zip == "" || country == "" || summary == "" || description == "" || dateField == "") {
+        navigator.notification.alert("All fields are required.");
+        return false;
+    }
+    
+    var incidentData = {longitude: 0, latitude: 0, address: address, city: city, state: state, zip: zip, country: country, summary: summary, description: description, date_recorded: dateField};
+    sos.registerIncident(incidentData);
+    sos.gotoIncidentReportsPage();
+};
 
 sos.util = {
     showContactPicker: function() {
@@ -497,6 +722,14 @@ sos.util = {
         } else {
             return true;
         }
+    },
+    getCurrentDate: function() {
+        var d = new Date();
+        var curr_date = d.getDate();
+        var curr_month = d.getMonth();
+        var curr_year = d.getFullYear();
+        var dateField = curr_year + "-" + curr_month + "-" + curr_date;
+        return dateField;
     }
 
 }

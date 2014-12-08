@@ -6,9 +6,14 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="jquery-mobile-datepicker/jquery.mobile.datepicker.css">
         <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.4.min.css">
         <script src="jquery-mobile/jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <script src="jquery-mobile-datepicker/jquery.mobile.datepicker.js"></script>
         <script src="jquery-mobile/jquery.mobile-1.4.4.min.js"></script>
+        
         <script src="js/jquery.cookie.js"></script>
         
         <script>
@@ -39,6 +44,31 @@
 
                 });
             });
+            
+            
+            var map;
+            document.addEventListener("deviceready", function() {
+                var mapDiv = document.getElementById("map_canvas");
+                                      
+                map = plugin.google.maps.Map.getMap(mapDiv);
+
+                map = plugin.google.maps.Map.getMap({
+                                                    'controls': {
+                                                    'compass': true,
+                                                    'myLocationButton': true,
+                                                    'indoorPicker': true,
+                                                    'zoom': true
+                                                    }
+                });
+                                      
+                map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+
+                                      
+            }, false);
+            
+            function onMapInit(map) {
+            }
+            
             </script>
         
         <title>SOS App</title>
@@ -58,18 +88,14 @@
 	   
                <p id="cancelSOSButton"><a href="#" onclick="sos.cancelCountDown()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
 
-               <p id="sendSOSBtn"><a href="#" onclick="sos.sendSOSMessage()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">SOS Bhej do</a></p>
-
-               <!-- <p id="test"><a href="#" onclick="sos.gotoSignupPage()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Sign Up </a></p> -->
-
            </div><!-- /content -->
            
            <div data-role="footer" data-theme="a" data-position="fixed">
 				<div data-role="navbar">
 		            <ul>
 		                <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
-		                <li><a href="#signup" data-icon="navigation">Map</a></li>
-		                <li><a href="#four" data-icon="action">Report</a></li>
+		                <li><a href="#map" data-icon="navigation">Map</a></li>
+		                <li><a href="#reports" onclick="sos.showIncidentsList();"  data-icon="action">Report</a></li>
 		                <li><a href="#settings" data-icon="gear">Settings</a></li>
 		            </ul>
 			   </div><!-- /navbar -->
@@ -158,6 +184,34 @@
 
 
 
+<!-- Start of first page: #map -->
+<div data-role="page" id="map" data-title="Map">
+    
+    <div data-role="header" data-position="fixed">
+        <h1>Map</h1>
+    </div><!-- /header -->
+    
+    <div role="main" class="ui-content">
+        <div style="width:100%;height:400px" id="map_canvas">
+            <div>
+                <button id="searchBtn" onclick="sos.getCurrentLocationOnMap()">Find me</button>
+            </div>
+
+        </div>
+        
+    </div><!-- /content -->
+    
+    <div data-role="footer" data-theme="a" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                <li><a href="#map" data-icon="navigation">Map</a></li>
+                <li><a href="#reports" onclick="sos.showIncidentsList();" data-icon="action">Report</a></li>
+                <li><a href="#settings" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div><!-- /page one -->
 
 
 
@@ -188,47 +242,112 @@
        </div><!-- /page two -->
        
        <!-- Start of third page: #popup -->
-       <div data-role="page" id="popup">
+       <div data-role="popup" id="popup">
            
-           <div data-role="header" data-theme="b">
-               <h1>Dialog</h1>
+           <div data-role="header">
+                <a href="#reports" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+               <h1>Detail Info</h1>
            </div><!-- /header -->
            
-           <div role="main" class="ui-content">
-               <h2>Popup</h2>
-               <p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
-               <p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page "one"</a></p>
+           <div role="main" class="ui-content" id="popupContent">
            </div><!-- /content -->
            
            <div data-role="footer">
-               <h4>Page Footer</h4>
+
            </div><!-- /footer -->
        </div><!-- /page popup -->
        
-       
-       <!-- Start of fourth page: #four -->
-       <div data-role="page" id="four" data-theme="a" data-position="fixed" data-title="Report">
+
+
+
+
+        <!-- Start of fourth page: #reports -->
+        <div data-role="page" id="reports" data-theme="a" data-position="fixed" data-title="Report">
+            
+            <div data-role="header">
+                <h1>Incidents</h1>
+               <a href="#" onclick="sos.gotoReportIncidentPage();" class="ui-btn ui-btn-right ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-plus">Add</a>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+                
+                <ul data-role="listview" data-inset="true" id="incidentsReportedList">
+
+                </ul>
+
+                
+            </div><!-- /content -->
+            <div data-role="footer" data-theme="a" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                        <li><a href="#map" data-icon="navigation">Map</a></li>
+                        <li><a href="#reports" onclick="sos.showIncidentsList();" data-icon="action">Report</a></li>
+                        <li><a href="#settings" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+            
+        </div><!-- /page incident reports -->
+
+
+
+
+       <!-- Start of fourth page: #report_incident -->
+       <div data-role="page" id="report_incident" data-theme="a" data-position="fixed" data-title="Report">
            
            <div data-role="header">
-               <h1>REPORT INCIDENT</h1>
+                <a href="#reports" onclick="sos.showIncidentsList();" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+               <h1>Log Report</h1>
            </div><!-- /header -->
            
            <div role="main" class="ui-content">
-                <h2></h2>
-			   
-                <label for="text-basic">Location:</label>
-                <input name="location" id="location" value="" type="text">  
-				<label for="text-basic">Time:</label>
-                <input name="Time" id="Time" value="" type="text">
-                <label for="text-basic">Incident Details:</label>
-                <input name="incident details" id="incident details" value="" type="text">	
-                <p><br><br><a href="#four" class="ui-btn ui-shadow ui-corner-all">Report Incident </a></p>
+               <label for="incident_address">Address:</label>
+               <input name="incident_address" id="incident_address" value="" type="text">
+
+                <label for="incident_city">City:</label>
+                <input name="incident_city" id="incident_city" value="" type="text">
+
+                <label for="incident_state">State:</label>
+                <input name="incident_state" id="incident_state" value="" type="text">
+
+                <label for="incident_zip">Zip:</label>
+                <input name="incident_zip" id="incident_zip" value="" type="text">
+
+                <label for="incident_country">Country:</label>
+                <input name="incident_country" id="incident_country" value="" type="text">
+
+				<label for="incident_date" >Date (YYYY-MM-DD):</label>
+                <input name="incident_date" id="incident_date" data-role="date" value="" type="text">
+
+                <label for="incident_summary">Incident Summary:</label>
+                <input name="incident_summary" id="incident_summary" value="" type="text">
+
+                <label for="incident_details">Incident Details:</label>
+                <input name="incident_details" id="incident_details" value="" type="text">
+
+                <a href="#" onclick="sos.reportIncident();" class="ui-btn ui-shadow ui-corner-all">Report Incident </a>
+                
 				
            </div><!-- /content -->
-           
+           <div data-role="footer" data-theme="a" data-position="fixed">
+               <div data-role="navbar">
+                   <ul>
+                       <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+                       <li><a href="#map" data-icon="navigation">Map</a></li>
+                       <li><a href="#reports" onclick="sos.showIncidentsList();" data-icon="action">Report</a></li>
+                       <li><a href="#settings" data-icon="gear">Settings</a></li>
+                   </ul>
+               </div><!-- /navbar -->
+           </div><!-- /footer -->
 
-       </div><!-- /page four -->
+       </div><!-- /page report incident -->
 	   
+       
+       
+       
+       
+       
 	   <!-- Start of fifth page: #settings -->
        <div data-role="page" id="settings" data-theme="a" data-position="fixed" data-title="Settings">
            
@@ -237,21 +356,12 @@
            </div><!-- /header -->
            
            <div role="main" class="ui-content">
-
-                <h2>Settings</h2>
                 <p><a href="#" onclick="sos.gotoContactsPage();" class="ui-btn ui-shadow ui-corner-all">Emergency contacts</a></p>
-                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">SOS Sounded </a></p>
-                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Trips Planned</a></p>
-                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Incidents Reported </a></p>
-                
-                <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Share Location</a></p>
-                <input type="checkbox" name="checkbox-mini" id="checkbox-1">
+                <!-- <p><a href="#" class="ui-btn ui-shadow ui-corner-all">Share Location</a></p> -->
+                <!--<input type="checkbox" name="checkbox-mini" id="checkbox-1">
                     <label for="checkbox-1">Alert nearby users when in Emergency </label>
-
-                <p><a href="#" class="ui-btn ui-shadow ui-corner-all" onclick="sos.user.signout()">Sign Out</a></p>
-                
-
-			
+                -->
+                <p><a href="#" class="ui-btn ui-shadow ui-corner-all" onclick="sos.user.signout()">Sign Out</a>
         
            </div><!-- /content -->
            
@@ -259,8 +369,8 @@
                <div data-role="navbar">
                    <ul>
                        <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
-                       <li><a href="#signup" data-icon="navigation">Map</a></li>
-                       <li><a href="#four" data-icon="action">Report</a></li>
+                       <li><a href="#map" data-icon="navigation">Map</a></li>
+                       <li><a href="#reports" onclick="sos.showIncidentsList();" data-icon="action">Report</a></li>
                        <li><a href="#settings" data-icon="gear">Settings</a></li>
                    </ul>
                </div><!-- /navbar -->
@@ -269,7 +379,7 @@
        
        
        
-       <!-- Start of fourth page: #four -->
+       <!-- Start of fourth page: #contacts -->
        <div data-role="page" id="contacts" data-theme="a" data-position="fixed" data-title="Contacts">
            
             <div data-role="header">
@@ -290,8 +400,8 @@
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
-                        <li><a href="#signup" data-icon="navigation">Map</a></li>
-                        <li><a href="#four" data-icon="action">Report</a></li>
+                        <li><a href="#map" data-icon="navigation">Map</a></li>
+                        <li><a href="#reports" onclick="sos.showIncidentsList();" data-icon="action">Report</a></li>
                         <li><a href="#settings" data-icon="gear">Settings</a></li>
                     </ul>
                 </div><!-- /navbar -->
@@ -315,7 +425,7 @@
        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/Flashlight.js"></script>
-        <script src="http://jsconsole.com/remote.js?BCBD2818-67AE-439C-921B-DD008F544B5F"></script>
+        <script src="http://jsconsole.com/remote.js?4BABD9B5-EB6C-41C4-8FB4-65DA57968BF2"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

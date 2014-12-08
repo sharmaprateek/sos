@@ -55,6 +55,8 @@ class Incidents_Reported(models.Model):
     description = models.TextField()
     time_of_incident = models.DateTimeField(default = timezone.now())
     date_recorded = models.DateField()
+    class Meta:
+        ordering = ['-date_recorded']
 
 class User_Location_Track(models.Model):
     session_id = models.CharField(max_length=450)

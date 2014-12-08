@@ -7,6 +7,8 @@ def get_model_fields(model):
         fields.append(field.name)
     if ('owner' in fields):
         fields.remove('owner')
+    if ('reported_by' in fields):
+        fields.remove('reported_by')
 
     return fields
 

@@ -13,6 +13,7 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/res/drawable-port-xhdpi/screen.png \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/res/drawable-xhdpi/icon.png \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/res/values/strings.xml \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/res/values/version.xml \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/res/xml/config.xml \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/ant-build/res/drawable/icon.png \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/ant-build/res/drawable-hdpi/icon.png \
@@ -37,6 +38,7 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/jquery-mobile \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/resources \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/css/index.css \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/img/logo.png \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/jquery-mobile/images \
@@ -262,8 +264,12 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/jquery-mobile/images/icons-svg/user-white.svg \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/jquery-mobile/images/icons-svg/video-black.svg \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/jquery-mobile/images/icons-svg/video-white.svg \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/js/Flashlight.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/js/index.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/js/jquery.cookie.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.jsmobile.plugins.sms \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.kolwit.pickcontact \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/nl.x-services.plugins.flashlight \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.camera \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.contacts \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.device \
@@ -272,8 +278,14 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.file \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media-capture \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.google.maps \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.http.request \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.jsmobile.plugins.sms/www \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.jsmobile.plugins.sms/www/sms.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.kolwit.pickcontact/www \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/com.kolwit.pickcontact/www/PickContact.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/nl.x-services.plugins.flashlight/www \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/nl.x-services.plugins.flashlight/www/Flashlight.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
@@ -332,4 +344,9 @@
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/CaptureVideoOptions.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/MediaFile.js \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/MediaFileData.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.google.maps/www \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.http.request/www \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/plugins/plugin.http.request/www/http-request.js \
+/Users/prateek/sjsu/sos/ui_sos/platforms/android/assets/www/resources/alarm.wav \
 /Users/prateek/sjsu/sos/ui_sos/platforms/android/ant-build/AndroidManifest.xml \

@@ -49,6 +49,7 @@ class IncidentsReportedViewSet(viewsets.ModelViewSet):
 
     def pre_save(self, obj):
         obj.owner = self.request.user
+        obj.reported_by = self.request.user
 
 class UserLocationTrackViewSet(CRUDViewSet):
     queryset = User_Location_Track.objects.all()

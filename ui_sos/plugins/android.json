@@ -51,6 +51,22 @@
                         {
                             "xml": "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.jsmobile.plugins.sms.Sms\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HttpRequest\"><param name=\"android-package\" value=\"plugin.http.request.HttpRequest\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"android-package\" value=\"plugin.google.maps.GoogleMaps\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"External\"><param name=\"android-package\" value=\"plugin.google.maps.External\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geocoder\"><param name=\"android-package\" value=\"plugin.google.maps.MyGeocoder\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -107,6 +123,44 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.google.android.providers.gsf.permission.READ_GSERVICES\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:glEsVersion=\"0x00020000\" android:required=\"true\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.maps.v2.API_KEY\" android:value=\"AIzaSyC7eTVsEEksJPUhayK3s-8CFFgd5zKWsD0\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -149,10 +203,23 @@
         },
         "com.jsmobile.plugins.sms": {
             "PACKAGE_NAME": "com.app.sos"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyC7eTVsEEksJPUhayK3s-8CFFgd5zKWsD0",
+            "PACKAGE_NAME": "com.app.sos"
         }
     },
     "dependent_plugins": {
         "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "plugin.http.request": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.app.sos"
+        },
+        "android.support.v4": {
             "PACKAGE_NAME": "com.app.sos"
         }
     }
