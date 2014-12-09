@@ -50,17 +50,25 @@
             document.addEventListener("deviceready", function() {
                 var mapDiv = document.getElementById("map_canvas");
                                       
-                map = plugin.google.maps.Map.getMap(mapDiv);
+//                map = plugin.google.maps.Map.getMap(mapDiv);
+
+
+                                      
 
                 map = plugin.google.maps.Map.getMap({
-                                                    'controls': {
-                                                    'compass': true,
-                                                    'myLocationButton': true,
-                                                    'indoorPicker': true,
-                                                    'zoom': true
-                                                    }
+                                                  'backgroundColor': 'white',
+                                                  'controls': {
+                                                  'compass': true,
+                                                  'myLocationButton': true,
+                                                  'indoorPicker': true,
+                                                  'zoom': true
+                                                  },
+                                                  'gestures': {
+                                                  'scroll': true,
+                                                  'tilt': true,
+                                                  'rotate': true
+                                                  }
                 });
-                                      
                 map.on(plugin.google.maps.event.MAP_READY, onMapInit);
 
                                       
@@ -194,7 +202,14 @@
     <div role="main" class="ui-content">
         <div style="width:100%;height:400px" id="map_canvas">
             <div>
-                <button id="searchBtn" onclick="sos.getCurrentLocationOnMap()">Find me</button>
+                
+                <pre>Neighborhood safety info for: </pre>
+                
+                <button id="searchBtn" onclick="sos.getCurrentLocationOnMap()">My current location</button>
+                <br />
+                <label for="find_address">Address:</label>
+                <input id="find_address" name="find_address" value="" type="text">
+                <button id="searchAddressBtn" onclick="sos.locateAddressOnMap()">Search</button>
             </div>
 
         </div>
@@ -425,7 +440,7 @@
        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/Flashlight.js"></script>
-        <script src="http://jsconsole.com/remote.js?4BABD9B5-EB6C-41C4-8FB4-65DA57968BF2"></script>
+        <script src="http://jsconsole.com/remote.js?7C60F434-BB91-4CD0-9534-9ED0DD10E9EC"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

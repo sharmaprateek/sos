@@ -79,7 +79,7 @@ app.initialize();
 // variable init section
 sos.countDownCancelled = false;
 sos.isAlarmOn = false;
-sos.baseURL = "http://192.168.1.106:8000/"
+sos.baseURL = "http://192.168.2.216:8000/"
 
 
 sos.server = {};
@@ -419,7 +419,8 @@ sos.sendSOSMessage = function(address) {
 
 
 sos.getCurrentLocationOnMap = function() {
-
+    sos.clearMap();
+    
     var onSuccess = function(location) {
         var msg = ["Current your location:\n",
                    "latitude:" + location.latLng.lat,
@@ -432,7 +433,11 @@ sos.getCurrentLocationOnMap = function() {
         var request = {
             'position': location.latLng
         };
+
         plugin.google.maps.Geocoder.geocode(request, function(results) {
+            if (sos.marker && sos.marker.remove) {
+                sos.marker.remove();
+            };
             if (results.length) {
                 var result = results[0];
                 var position = result.position;
@@ -447,14 +452,25 @@ sos.getCurrentLocationOnMap = function() {
                               'position': position,
                               'title':  address,
                               }, function(marker) {
-                              
+                              sos.marker = marker;
                               map.animateCamera({
                                                 'target': position,
-                                                'zoom': 17
+                                                'zoom': 13
                                                 }, function() {
                                                 marker.showInfoWindow();
                                                 });
                               
+                              });
+                                            
+// red = #880000, yellow = #F0E68C, green = #ADFF2F
+                map.addCircle({
+                              'center': position,
+                              'radius': 1000,
+                              'strokeColor' : '#AA00FF',
+                              'strokeWidth': 1,
+                              'fillColor' : sos.color.green
+                              }, function(circle) {
+                              sos.circle = circle;
                               });
             } else {
                 console.log("Not found");
@@ -473,6 +489,69 @@ sos.getCurrentLocationOnMap = function() {
 
 
 };
+
+sos.color = {};
+sos.color.red = "#880000";
+sos.color.green = "#00CC00";
+sos.color.yellow = "#F0E68C";
+
+sos.locateAddressOnMap = function() {
+    sos.clearMap();
+    var address = $("#find_address").val();
+    var request = {
+        'address': address
+    };
+    plugin.google.maps.Geocoder.geocode(request, function(results) {
+        if (results.length) {
+        var result = results[0];
+        var position = result.position;
+        map.showDialog();
+        map.addMarker({
+                      'position': position,
+                      'title':  address
+                      }, function(marker) {
+                      
+                      map.animateCamera({
+                                        'target': position,
+                                        'zoom': 13
+                                        }, function() {
+                                        marker.showInfoWindow();
+                                        });
+                              });
+                      map.addCircle({
+                                    'center': position,
+                                    'radius': 1000,
+                                    'strokeColor' : '#AA00FF',
+                                    'strokeWidth': 1,
+                                    'fillColor' : sos.color.yellow
+                                    }, function(circle) {
+                                    sos.circle = circle;
+
+                      });
+        } else {
+            navigator.notification.alert("Location not found");
+            console.log("Location Not found");
+        }
+    });
+    var onError = function(msg) {
+        console.log("error: " + msg);
+    };
+
+    
+//    map.getMyLocation(onSuccess, onError);
+
+};
+
+sos.clearMap = function() {
+    if (sos.marker && sos.marker.remove) {
+        console.log("removing marker");
+        sos.marker.remove();
+    };
+    if (sos.circle && sos.circle.remove) {
+        console.log("removing circle");
+        sos.circle.remove();
+    };
+}
 
 sos.initiateSOS = function() {
     
@@ -574,22 +653,25 @@ sos.stopSOS = function() {
 
 sos.addContact = function() {
     navigator.contacts.pickContact(function(contact) {
-        //console.log('The following contact has been selected:' + JSON.stringify(contact));
+        console.log('The following contact has been selected:' + JSON.stringify(contact));
 
-//        navigator.notification.alert('The following contact has been selected:' + JSON.stringify(contact.phoneNumbers[0].value));
         var c = {};
         c.name = contact.name.formatted;
-//                                   navigator.notification.alert(contact.phoneNumbers.length);
-        if (contact.phoneNumbers.length > 0) {
-            var nums = [];
+
+        var nums = [];
+        if (contact.phoneNumbers != null && contact.phoneNumbers.length > 0) {
 
             for (var i=0; i<contact.phoneNumbers.length; i++) {
                 nums.push(contact.phoneNumbers[i].value);
             }
+            c.phone = nums;
+        } else {
+            navigator.notification.alert("This contact has no phone number stored in it. Hence not adding.");
+            return false;
         }
-        c.phone = nums;
-        if (contact.emails.length > 0) {
-            var emails = [];
+
+        var emails = [];
+        if (contact.emails != null && contact.emails.length > 0) {
             for (var i=0; i < contact.emails.length; i++) {
                 emails.push(contact.emails[i].value);
             }
@@ -598,25 +680,46 @@ sos.addContact = function() {
                                    
 
         var userContacts = [];
-       if (localStorage.getItem("userContacts") !== null) {
-                                   userContacts = localStorage.getItem("userContacts");
-                                   userContacts = JSON.parse(userContacts);
-       }
-        console.log(userContacts);
+        if (localStorage.getItem("userContacts") !== null) {
+            userContacts = localStorage.getItem("userContacts");
+            userContacts = JSON.parse(userContacts);
+        }
+
         c.id = userContacts.length + 1;
-//        navigator.notification.alert(userContacts.length);
-
         userContacts.push(c);
-        localStorage.setItem("userContacts",JSON.stringify(userContacts));
-                                   console.log("done processing contact add");
 
-                                   sos.showContactList();
+        localStorage.setItem("userContacts",JSON.stringify(userContacts));
+                                   
+        console.log("done processing contact add");
+                                   
+        sos.showContactList();
 
     }, function(err) {
         console.log('Error: ' + err);
     });
 
 };
+
+sos.removeContact = function(contactId) {
+    console.log("going to remove contact: "+contactId);
+    var contacts = localStorage.getItem("userContacts");
+    contacts = JSON.parse(contacts);
+    for (var i=0; i<contacts.length; i++) {
+        if (contacts[i] == null) {
+            delete(contacts[i]);
+            continue;
+        }
+        if (contacts[i].id == contactId) {
+            console.log("Contact found, deleting: "+contactId);
+            delete(contacts[i]);
+            localStorage.setItem("userContacts",JSON.stringify(contacts));
+            sos.showContactList();
+            return true;
+        }
+    }
+    console.log("Unable to remove contact: "+contactId);
+    return false;
+}
 
 sos.showContactList = function() {
     var userContacts = localStorage.getItem("userContacts") || [];
@@ -628,7 +731,12 @@ sos.showContactList = function() {
     contactList.empty();
     console.log(userContacts);
     for (var i=0;i<userContacts.length; i++) {
-        var text = '<a href="#">'+ userContacts[i].name +'</a>';
+        if (userContacts[i] == null) {
+            delete(userContacts[i]);
+            continue;
+        }
+        console.log(userContacts[i]);
+        var text = '<a href="#" onclick="sos.removeContact('+ userContacts[i].id +')">'+ userContacts[i].name +'</a>';
         var l = $('<li />', {html: text});
         l.attr("data-icon","delete");
         l.appendTo('#contactList')
@@ -663,6 +771,7 @@ sos.showIncidentsList = function() {
             incidentList.listview("refresh");
         },
         error: function(xhr) {
+           console.log("Error retreiving incidets..");
             console.log(xhr.responseText);
         },
     });
@@ -726,7 +835,7 @@ sos.util = {
     getCurrentDate: function() {
         var d = new Date();
         var curr_date = d.getDate();
-        var curr_month = d.getMonth();
+        var curr_month = d.getMonth() + 1;
         var curr_year = d.getFullYear();
         var dateField = curr_year + "-" + curr_month + "-" + curr_date;
         return dateField;
