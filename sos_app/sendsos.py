@@ -29,3 +29,21 @@ def send_message(request):
             body = message,
         )
     return Response("{success: messages sent}", status=status.HTTP_201_CREATED)
+
+@api_view(['POST'])
+@permission_classes((IsAuthenticated, ))
+@csrf_exempt
+def send_message_false_alert(request):
+
+    data = request.DATA
+    sender = request.user.first_name + " " + request.user.last_name
+    message = sender + ": " + data["message"]
+    phoneNumbers = data['phoneNumbers']
+    for phone in phoneNumbers:
+        client.messages.create(
+            to = phone,
+            from_ = "+16506145513",
+            body = message,
+        )
+    return Response("{success: messages sent}", status=status.HTTP_201_CREATED)
+

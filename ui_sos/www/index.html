@@ -95,7 +95,10 @@
                <p><a href="#" onclick="sos.sosButton()" class="ui-btn ui-shadow ui-corner-all"><br>SOS<br><br><span id="countdownDiv">Initiating in 5</span><br><br></a></p>
 	   
                <p id="cancelSOSButton"><a href="#" onclick="sos.cancelCountDown()" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Cancel SOS countdown</a></p>
-
+               <br><br>
+                <p id="falseAlertButton">
+                    <a href="#falseAlert" class="ui-btn ui-shadow ui-corner-all">False Alert?</a>
+                </p>
            </div><!-- /content -->
            
            <div data-role="footer" data-theme="a" data-position="fixed">
@@ -110,6 +113,28 @@
            </div><!-- /footer -->
        </div><!-- /page one -->
 
+
+
+
+<!-- Start of #falseAlert -->
+<div data-role="page" id="falseAlert">
+    
+    <div data-role="header">
+        <a href="#home" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+        <h1>False alert?</h1>
+    </div><!-- /header -->
+    
+    <div role="main" class="ui-content" id="popupContent">
+        <label for="false_alert_message">Message:</label>
+        <textarea id="false_alert_message">Please discard the last message you received. It was triggered by mistake, everything is alright!</textarea>
+        <a href="#" onclick="sos.flagFalseAlert();" class="ui-btn ui-shadow ui-corner-all">Mark as False Alert</a>
+        <a href="#" onclick="sos.gotoHomePage();" class="ui-btn ui-shadow ui-corner-all">Not False Alert</a>
+    </div><!-- /content -->
+    
+    <div data-role="footer">
+        
+    </div><!-- /footer -->
+</div><!-- /page popup -->
 
 
 
@@ -257,7 +282,7 @@
        </div><!-- /page two -->
        
        <!-- Start of third page: #popup -->
-       <div data-role="popup" id="popup">
+       <div data-role="page" id="popup">
            
            <div data-role="header">
                 <a href="#reports" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
@@ -272,6 +297,7 @@
            </div><!-- /footer -->
        </div><!-- /page popup -->
        
+
 
 
 
@@ -440,7 +466,7 @@
        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/Flashlight.js"></script>
-        <script src="http://jsconsole.com/remote.js?7C60F434-BB91-4CD0-9534-9ED0DD10E9EC"></script>
+        <!-- <script src="http://jsconsole.com/remote.js?9DFA8914-492D-43D4-90F0-A9845C2A69DE"></script> -->
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

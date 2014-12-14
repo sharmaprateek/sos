@@ -19,6 +19,7 @@ router.register(r'location-track', UserLocationTrackViewSet)
 urlpatterns = [
     url(r'^register/', register.create_auth),
     url(r'^sendsos/', sendsos.send_message),
+    url(r'^sendfalsealert/', sendsos.send_message_false_alert),
     url(r'^', include(router.urls)),
     url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

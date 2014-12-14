@@ -40,6 +40,7 @@ var app = {
         if (sos.isRegisteredUser()) {
             sos.server.initialize();
             app.initializeCountdown();
+            sos.hideFalseAlertButton();
             app.receivedEvent('deviceready');
             console.debug("SOS APP INITAIALIZED");
         } else {
@@ -266,6 +267,7 @@ sos.user.registerDevice = function() {
 
 sos.gotoHomePage = function() {
     $.mobile.changePage("#home");
+    sos.hideFalseAlertButton();
     sos.cancelCountDown();
 };
            
@@ -407,6 +409,7 @@ sos.sendSOSMessage = function(address) {
            headers: { 'Authorization': 'Token ' + sos.user.AuthToken },
            success: function(resp) {
                 console.log("message sent, resp: "+resp);
+                sos.showFalseAlertButton();
            }, error:function(xhr, data, error) {
                 //navigator.notification.alert(data + " -- " + error + " --> " + xhr.responseText);
                 console.log(data + " -- " + error + " --> " + xhr.responseText);
@@ -650,6 +653,92 @@ sos.stopSOS = function() {
     $("#countdownDiv").html("Click to Sound Alarm");
 };
 
+sos.flagFalseAlert = function() {
+    
+    function onPrompt(results) {
+        console.log("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+        
+        if (results.buttonIndex == 1) {
+            
+            if (sos.isValidPassword(results.input1)) {
+                sos.sendFalseAlertMessage($("#false_alert_message").val());
+            } else {
+                sos.flagFalseAlert();
+                return;
+            }
+            
+        } else {
+            sos.gotoHomePage();
+        }
+    }
+    
+    navigator.notification.prompt(
+                                  'Please enter your password',  // message
+                                  onPrompt,                  // callback to invoke
+                                  'Security',            // title
+                                  ['Ok','Cancel'],             // buttonLabels
+                                  ''                 // defaultText
+                                  );
+    
+
+};
+
+sos.sendFalseAlertMessage = function(message) {
+
+    
+    console.log("sending false alert message now");
+    
+    var contacts = localStorage.getItem("userContacts");
+    contacts = JSON.parse(contacts);
+    
+    var pnos = "";
+    for (var i=0; i<contacts.length; i++) {
+        pnos += contacts[i].phone.toString() + ",";
+    }
+    pnos = pnos.substring(0,pnos.length-1);
+    pnos = pnos.split(',');
+    
+    var data = JSON.stringify({phoneNumbers: pnos, message: message});
+    
+    console.log("Final data: " + data);
+    
+    $.ajax({
+           url: sos.baseURL + "sendfalsealert/",
+           type: 'post',
+           data: data,
+           contentType: 'application/json',
+           headers: { 'Authorization': 'Token ' + sos.user.AuthToken },
+           success: function(resp) {
+                console.log("message sent, resp: "+resp);
+                sos.gotoHomePage();
+           }, error:function(xhr, data, error) {
+           //navigator.notification.alert(data + " -- " + error + " --> " + xhr.responseText);
+           console.log(data + " -- " + error + " --> " + xhr.responseText);
+           },
+           
+           });
+
+    
+};
+
+sos.isValidPassword = function(password) {
+    var storedPass = localStorage.getItem("password");
+    console.log(password + " === " + storedPass);
+    if (password == storedPass) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+sos.showFalseAlertButton = function() {
+    $("#falseAlertButton").show();
+    setTimeout(function(){ sos.hideFalseAlertButton(); },300000);
+};
+
+sos.hideFalseAlertButton = function() {
+    $("#falseAlertButton").hide();
+};
 
 sos.addContact = function() {
     navigator.contacts.pickContact(function(contact) {
@@ -742,7 +831,10 @@ sos.showContactList = function() {
         l.appendTo('#contactList')
 
     }
-    $("#contactList").listview("refresh");
+    if (userContacts.length != 0) {
+        $("#contactList").listview("refresh");
+    }
+    
 };
 
 sos.showIncidentsList = function() {
